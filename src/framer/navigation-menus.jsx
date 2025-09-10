@@ -42,16 +42,8 @@
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-UWHX4YRX.js";
-import "./chunks/chunk-SFO5DWNP.js";
-import "./chunks/chunk-K6EGLENN.js";
-import "./chunks/chunk-C6MNZJBI.js";
-import "./chunks/chunk-JPUHUUAZ.js";
-import "./chunks/chunk-BBXSTD3N.js";
-import "./chunks/chunk-D53GR4VG.js";
-import "./chunks/chunk-QWKSH5UA.js";
-import "./chunks/chunk-PXDCO22G.js";
-import { routes } from "./chunks/chunk-74LWP5VC.js";
+import { stdin_default3 as stdin_default } from "./chunks/chunk-OEWBXMD6.js";
+import { routes } from "./chunks/chunk-LUKRWB7Z.js";
 
 // virtual:navigation-menus
 import { Fragment } from "react";
@@ -66,9 +58,7 @@ var locales = [
 		code: "yue-Hant-HK",
 	},
 ];
-var defaultResponsiveVariants = {
-	base: "Bot6U51_g",
-};
+var defaultResponsiveVariants = {};
 /** @type {function(Props): any} */
 function ComponentWithRoot({ locale, ...rest }) {
 	return (
