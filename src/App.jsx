@@ -1,118 +1,105 @@
 // src/App.jsx
 import './framer/styles.css'
 
-// --- Always import nav explicitly so it's guaranteed to render:
+// --- Brand & Nav ---
+import MlLogo from './framer/ml-logo.jsx'
 import NavigationBar from './framer/navigation-bar.jsx'
 import NavigationMenus from './framer/navigation-menus.jsx'
 import NavigationMenuText from './framer/navigation-menu-text.jsx'
 
-// Auto-import every .jsx inside src/framer and its subfolders (e.g. product-page/*)
-const modules = import.meta.glob('./framer/**/*.jsx', { eager: true })
+// --- Hero / promos ---
+import StaticHeaderx1 from './framer/static-headerx1.jsx'
+import SlidingHeaderx3 from './framer/sliding-headerx3.jsx'
 
-// Filenames we will EXCLUDE from auto-list because we render them explicitly
-const EXCLUDE = new Set([
-  'navigation-bar.jsx',
-  'navigation-menus.jsx',
-  'navigation-menu-text.jsx',
-])
+// --- Content ---
+import ProductCardHome from './framer/product-card-home.jsx'
 
-// Turn modules into an ordered list of { path, file, Comp }
-const exported = Object.entries(modules)
-  .map(([path, mod]) => {
-    const file = path.split('/').pop() // e.g., "product-card-home.jsx"
-    return { path, file, Comp: mod?.default }
-  })
-  // keep only modules with a default export that has a .Responsive variant
-  .filter(x => x.Comp && x.Comp.Responsive && !EXCLUDE.has(x.file))
+// --- Footer ---
+import FooterCTA from './framer/footer-cta.jsx'
+import Footer from './framer/footer.jsx'
 
-// Optional: put some commonly-viewed components earlier; everything else alphabetical
-const preferredOrder = [
-  'static-headerx1.jsx',
-  'sliding-headerx3.jsx',
-  'footer.jsx',
-  'product-card-home.jsx',
-  'product-card-information.jsx',
-  'product-card-blog.jsx',
-]
+// --- Inline links (optional small elements) ---
+import InlineLinkClick from './framer/inline-link-click.jsx'
+import InlineLinkIconClick from './framer/inline-link-icon-click.jsx'
 
-const byPreferredOrder = (a, b) => {
-  const ai = preferredOrder.indexOf(a.file)
-  const bi = preferredOrder.indexOf(b.file)
-  const aI = ai === -1 ? Number.MAX_SAFE_INTEGER : ai
-  const bI = bi === -1 ? Number.MAX_SAFE_INTEGER : bi
-  return aI - bI || a.file.localeCompare(b.file)
-}
-
-const components = exported.sort(byPreferredOrder)
+// --- Buttons ---
+import ButtonPlain from './framer/button-plain.jsx'
+import ButtonRounded from './framer/button-rounded.jsx'
+import ButtonLoadMore from './framer/button-load-more.jsx'
+import ButtonCartoon from './framer/button-cartoon.jsx'
+import ButtonSubmit from './framer/button-submit.jsx'
 
 export default function App() {
   return (
-    <div style={{ minHeight: '100vh', background: 'rgb(255,253,245)' }}>
-      {/* Sticky site header with explicit nav so it never disappears */}
+    <div style={{ background: 'rgb(255,253,245)' }}>
+      {/* ====== NAV / HEADER ====== */}
       <header
         style={{
           position: 'sticky',
           top: 0,
-          zIndex: 50,
+          zIndex: 30,
           background: '#fff',
-          borderBottom: '1px solid rgba(0,0,0,0.06)',
+          boxShadow: '0 1px 0 rgba(0,0,0,.06)',
         }}
       >
+        {/* Brand row */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 16,
+            padding: '8px 16px',
+            maxWidth: 1200,
+            margin: '0 auto',
+          }}
+        >
+          <MlLogo.Responsive />
+        </div>
+
+        {/* Main navigation */}
         <NavigationBar.Responsive preserveParameters />
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '8px 16px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 16px 8px' }}>
           <NavigationMenus.Responsive preserveParameters />
           <NavigationMenuText.Responsive preserveParameters />
         </div>
       </header>
 
-      {/* Quick debug list so you can see what auto-loaded */}
-      <div style={{ maxWidth: 1200, margin: '16px auto', padding: '0 16px' }}>
-        <details>
-          <summary style={{ cursor: 'pointer' }}>
-            Loaded components ({components.length})
-          </summary>
-          <ul style={{ columns: 2, marginTop: 8 }}>
-            {components.map(({ file }) => (
-              <li key={file} style={{ fontFamily: 'monospace' }}>{file}</li>
-            ))}
-          </ul>
-        </details>
-      </div>
+      {/* ====== HERO / PROMOS ====== */}
+      <main style={{ maxWidth: 1200, margin: '24px auto', padding: '0 16px' }}>
+        <section style={{ marginBottom: 24 }}>
+          <StaticHeaderx1.Responsive preserveParameters />
+        </section>
 
-      {/* Render all other components */}
-      <main
-        style={{
-          maxWidth: 1200,
-          margin: '16px auto 48px',
-          padding: '0 16px',
-          display: 'grid',
-          gap: 24,
-        }}
-      >
-        {components.map(({ path, Comp, file }) => (
-          <section
-            key={path}
-            style={{
-              background: '#fff',
-              borderRadius: 12,
-              boxShadow: '0 2px 12px rgba(0,0,0,.06)',
-              padding: 16,
-            }}
-          >
-            <h3
-              style={{
-                margin: '0 0 12px',
-                fontSize: 16,
-                fontFamily: 'monospace',
-                opacity: 0.7,
-              }}
-            >
-              {file}
-            </h3>
-            <Comp.Responsive preserveParameters />
-          </section>
-        ))}
+        <section style={{ marginBottom: 32 }}>
+          <SlidingHeaderx3.Responsive preserveParameters />
+        </section>
+
+        {/* ====== FEATURED PRODUCT ====== */}
+        <section style={{ marginBottom: 48 }}>
+          <ProductCardHome.Responsive
+            link="/product-list/shop-books"
+            preserveParameters
+          />
+        </section>
+
+        {/* ====== OPTIONAL INLINE LINKS / BUTTONS SHOWCASE ====== */}
+        <section style={{ display: 'grid', gap: 12, gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', marginBottom: 48 }}>
+          <InlineLinkClick.Responsive preserveParameters />
+          <InlineLinkIconClick.Responsive preserveParameters />
+
+          <ButtonPlain.Responsive preserveParameters />
+          <ButtonRounded.Responsive preserveParameters />
+          <ButtonLoadMore.Responsive preserveParameters />
+          <ButtonCartoon.Responsive preserveParameters />
+          <ButtonSubmit.Responsive preserveParameters />
+        </section>
       </main>
+
+      {/* ====== FOOTER ====== */}
+      <footer>
+        <FooterCTA.Responsive preserveParameters />
+        <Footer.Responsive preserveParameters />
+      </footer>
     </div>
   )
 }
