@@ -19,41 +19,24 @@
  * width?: any
  * height?: any
  * layoutId?: string
- * variant?: 'Shop Extras' | 'Shop Extras - Open' | 'Signed Out' | 'Avatar Version' | 'Avatar Open' // Variant
- * click?: Function // Click
- * titleMainMenu?: string // Title - Main Menu
- * titleDropdown1?: string // Title - Dropdown - 1
- * titleDropdown2?: string // Title - Dropdown - 2
- * titleDropdown3?: string // Title - Dropdown - 3
- * titleDropdown4?: string // Title - Dropdown - 4
- * titleDropdown5?: string // Title - Dropdown - 5
- * titleDropdown6?: string // Title - Dropdown - 6
- * linkDropdown1?: string // Link - Dropdown - 1
- * linkDropdown2?: string // Link - Dropdown - 2
- * linkDropdown3?: string // Link - Dropdown - 3
- * linkDropdown4?: string // Link - Dropdown - 4
- * linkDropdown5?: string // Link - Dropdown - 5
- * linkDropdown6?: string // Link - Dropdown - 6
- * visibleDropdown5?: boolean // Visible - Dropdown 5
- * visibleDropdown6?: boolean // Visible - Dropdown 6
- * align?: 'Start' | 'Center' | 'End' // Align
- * tabNavMenuVariable?: 'Default' | 'Static' // Tab Nav Menu - Variable
- * variantDropdownMenu?: 'Left Aligned' | 'Left Aligned - Static' | 'Right Aligned' | 'Right Aligned - Static' | 'Ctr Aligned' | 'Ctr Aligned - Static' // Variant - dropdownMenu
+ * variant?: 'Desktop' | 'Laptop' | 'Tablet' | 'Mobile' // Variant
+ * visibleFooter?: boolean // Visible - Footer
+ * colourFooter?: string // Colour - Footer
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-UFVKH4NO.js";
-import "./chunks/chunk-SFO5DWNP.js";
-import "./chunks/chunk-UC6EBGSA.js";
-import "./chunks/chunk-C6MNZJBI.js";
-import "./chunks/chunk-JPUHUUAZ.js";
-import "./chunks/chunk-BBXSTD3N.js";
+import { stdin_default } from "./chunks/chunk-5H7ZWB2I.js";
+import "./chunks/chunk-4PNTGOWM.js";
+import "./chunks/chunk-LSDZCXQW.js";
+import "./chunks/chunk-GU6EMNIV.js";
+import "./chunks/chunk-NZN6TVQV.js";
+import "./chunks/chunk-VZARCJE6.js";
 import "./chunks/chunk-D53GR4VG.js";
 import "./chunks/chunk-QWKSH5UA.js";
 import "./chunks/chunk-PXDCO22G.js";
 import { routes } from "./chunks/chunk-74LWP5VC.js";
 
-// virtual:navigation-menus
+// virtual:footer
 import { Fragment } from "react";
 import { ContextProviders } from "unframer";
 import { WithFramerBreakpoints } from "unframer";
@@ -66,7 +49,12 @@ var locales = [
 		code: "yue-Hant-HK",
 	},
 ];
-var defaultResponsiveVariants = {};
+var defaultResponsiveVariants = {
+	base: "IrbMKKnit",
+	md: "DahCfmT91",
+	xl: "Ecp8qLasM",
+	"2xl": "fWysSVmoN",
+};
 /** @type {function(Props): any} */
 function ComponentWithRoot({ locale, ...rest }) {
 	return (
@@ -96,7 +84,7 @@ function ComponentWithRoot({ locale, ...rest }) {
  */
 
 /**
- * Renders NavigationMenusFramerComponent for all breakpoints with a variants map. Variant prop is inferred per breakpoint.
+ * Renders FooterFramerComponent for all breakpoints with a variants map. Variant prop is inferred per breakpoint.
  * @function
  * @param {Omit<Props, 'variant'> & {variants?: VariantsMap}} props
  * @returns {any}
@@ -120,5 +108,5 @@ ComponentWithRoot.Responsive = ({ locale = "", ...rest }) => {
 	);
 };
 Object.assign(ComponentWithRoot, stdin_default);
-var navigation_menus_default = ComponentWithRoot;
-export { navigation_menus_default as default };
+var footer_default = ComponentWithRoot;
+export { footer_default as default };

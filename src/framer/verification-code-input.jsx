@@ -19,19 +19,33 @@
  * width?: any
  * height?: any
  * layoutId?: string
- * variant?: 'Left Aligned' | 'Left Aligned - Static' | 'Right Aligned' | 'Right Aligned - Static' | 'Ctr Aligned' | 'Ctr Aligned - Static' // Variant
  * title?: string // Title
- * link?: string // Link
- * click?: Function // Click
+ * subtitle?: string // Subtitle
+ * buttonText?: string // Button Text
+ * errorMessage?: string // Error Message
+ * onVerify?: Function // On Verify
+ * background?: string // Background
+ * inputBackground?: string // Input Background
+ * inputBorder?: string // Input Border
+ * inputFocus?: string // Input Focus
+ * textColor?: string // Text Color
+ * buttonActive?: string // Button Active
+ * buttonInactive?: string // Button Inactive
+ * buttonText?: string // Button Text
+ * padding?: undefined // Padding
+ * titleFont?: undefined // Title Font
+ * subtitleFont?: undefined // Subtitle Font
+ * inputFont?: undefined // Input Font
+ * buttonFont?: undefined // Button Font
+ * borderRadius?: number // Border Radius
+ * inputSpacing?: number // Input Spacing
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-UC6EBGSA.js";
-import "./chunks/chunk-C6MNZJBI.js";
-import "./chunks/chunk-BBXSTD3N.js";
+import { VerificationCodeInput } from "./chunks/chunk-X5RIED6B.js";
 import { routes } from "./chunks/chunk-74LWP5VC.js";
 
-// virtual:navigation-menu-text
+// virtual:verification-code-input
 import { Fragment } from "react";
 import { ContextProviders } from "unframer";
 import { WithFramerBreakpoints } from "unframer";
@@ -56,9 +70,7 @@ function ComponentWithRoot({ locale, ...rest }) {
 			locale={locale}
 			locales={locales}
 		>
-			{jsx(stdin_default, {
-				...rest,
-			})}
+			<VerificationCodeInput {...rest} />
 		</ContextProviders>
 	);
 }
@@ -74,7 +86,7 @@ function ComponentWithRoot({ locale, ...rest }) {
  */
 
 /**
- * Renders NavigationMenuTextFramerComponent for all breakpoints with a variants map. Variant prop is inferred per breakpoint.
+ * Renders VerificationCodeInputFramerComponent for all breakpoints with a variants map. Variant prop is inferred per breakpoint.
  * @function
  * @param {Omit<Props, 'variant'> & {variants?: VariantsMap}} props
  * @returns {any}
@@ -90,13 +102,13 @@ ComponentWithRoot.Responsive = ({ locale = "", ...rest }) => {
 			locales={locales}
 		>
 			<WithFramerBreakpoints
-				Component={stdin_default}
+				Component={VerificationCodeInput}
 				variants={defaultResponsiveVariants}
 				{...rest}
 			/>
 		</ContextProviders>
 	);
 };
-Object.assign(ComponentWithRoot, stdin_default);
-var navigation_menu_text_default = ComponentWithRoot;
-export { navigation_menu_text_default as default };
+Object.assign(ComponentWithRoot, VerificationCodeInput);
+var verification_code_input_default = ComponentWithRoot;
+export { verification_code_input_default as default };

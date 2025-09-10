@@ -19,19 +19,27 @@
  * width?: any
  * height?: any
  * layoutId?: string
- * variant?: 'Left Aligned' | 'Left Aligned - Static' | 'Right Aligned' | 'Right Aligned - Static' | 'Ctr Aligned' | 'Ctr Aligned - Static' // Variant
  * title?: string // Title
- * link?: string // Link
- * click?: Function // Click
+ * helpText?: string // Help Text
+ * helpLink?: string // Help Link
+ * boxCount?: number // Box Count
+ * background?: string // Background
+ * textColor?: string // Text Color
+ * border?: string // Border
+ * activeBorder?: string // Active Border
+ * font?: undefined // Font
+ * loadingDelay?: number // Loading Delay
+ * mockData?: {name: string, street: string, city: string, county: string, postcode: string // Mock Data
+ * changeButtonText?: string // Change Button Text
+ * changeButtonBG?: string // Change Button BG
+ * changeButtonTextColor?: string // Change Button Text Color
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-UC6EBGSA.js";
-import "./chunks/chunk-C6MNZJBI.js";
-import "./chunks/chunk-BBXSTD3N.js";
+import { CompanyRegistrationInput } from "./chunks/chunk-UGZRS5UV.js";
 import { routes } from "./chunks/chunk-74LWP5VC.js";
 
-// virtual:navigation-menu-text
+// virtual:company-registration-input
 import { Fragment } from "react";
 import { ContextProviders } from "unframer";
 import { WithFramerBreakpoints } from "unframer";
@@ -56,9 +64,7 @@ function ComponentWithRoot({ locale, ...rest }) {
 			locale={locale}
 			locales={locales}
 		>
-			{jsx(stdin_default, {
-				...rest,
-			})}
+			<CompanyRegistrationInput {...rest} />
 		</ContextProviders>
 	);
 }
@@ -74,7 +80,7 @@ function ComponentWithRoot({ locale, ...rest }) {
  */
 
 /**
- * Renders NavigationMenuTextFramerComponent for all breakpoints with a variants map. Variant prop is inferred per breakpoint.
+ * Renders CompanyRegistrationInputFramerComponent for all breakpoints with a variants map. Variant prop is inferred per breakpoint.
  * @function
  * @param {Omit<Props, 'variant'> & {variants?: VariantsMap}} props
  * @returns {any}
@@ -90,13 +96,13 @@ ComponentWithRoot.Responsive = ({ locale = "", ...rest }) => {
 			locales={locales}
 		>
 			<WithFramerBreakpoints
-				Component={stdin_default}
+				Component={CompanyRegistrationInput}
 				variants={defaultResponsiveVariants}
 				{...rest}
 			/>
 		</ContextProviders>
 	);
 };
-Object.assign(ComponentWithRoot, stdin_default);
-var navigation_menu_text_default = ComponentWithRoot;
-export { navigation_menu_text_default as default };
+Object.assign(ComponentWithRoot, CompanyRegistrationInput);
+var company_registration_input_default = ComponentWithRoot;
+export { company_registration_input_default as default };

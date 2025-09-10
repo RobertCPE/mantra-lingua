@@ -19,19 +19,25 @@
  * width?: any
  * height?: any
  * layoutId?: string
- * variant?: 'Left Aligned' | 'Left Aligned - Static' | 'Right Aligned' | 'Right Aligned - Static' | 'Ctr Aligned' | 'Ctr Aligned - Static' // Variant
- * title?: string // Title
- * link?: string // Link
- * click?: Function // Click
+ * message?: string // Message
+ * background?: string // Background
+ * textColor?: string // Text Color
+ * borderColor?: string // Border Color
+ * iconColor?: string // Icon Color
+ * font?: undefined // Font
+ * borderRadius?: number // Border Radius
+ * showIcon?: boolean // Show Icon
+ * volume?: number // Volume
+ * autoHide?: boolean // Auto Hide
+ * hideDelay?: number // Hide Delay
+ * soundFile?: string // Sound File
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-UC6EBGSA.js";
-import "./chunks/chunk-C6MNZJBI.js";
-import "./chunks/chunk-BBXSTD3N.js";
+import { CompletionAlert } from "./chunks/chunk-562WHMPI.js";
 import { routes } from "./chunks/chunk-74LWP5VC.js";
 
-// virtual:navigation-menu-text
+// virtual:completion-alert
 import { Fragment } from "react";
 import { ContextProviders } from "unframer";
 import { WithFramerBreakpoints } from "unframer";
@@ -56,9 +62,7 @@ function ComponentWithRoot({ locale, ...rest }) {
 			locale={locale}
 			locales={locales}
 		>
-			{jsx(stdin_default, {
-				...rest,
-			})}
+			<CompletionAlert {...rest} />
 		</ContextProviders>
 	);
 }
@@ -74,7 +78,7 @@ function ComponentWithRoot({ locale, ...rest }) {
  */
 
 /**
- * Renders NavigationMenuTextFramerComponent for all breakpoints with a variants map. Variant prop is inferred per breakpoint.
+ * Renders CompletionAlertFramerComponent for all breakpoints with a variants map. Variant prop is inferred per breakpoint.
  * @function
  * @param {Omit<Props, 'variant'> & {variants?: VariantsMap}} props
  * @returns {any}
@@ -90,13 +94,13 @@ ComponentWithRoot.Responsive = ({ locale = "", ...rest }) => {
 			locales={locales}
 		>
 			<WithFramerBreakpoints
-				Component={stdin_default}
+				Component={CompletionAlert}
 				variants={defaultResponsiveVariants}
 				{...rest}
 			/>
 		</ContextProviders>
 	);
 };
-Object.assign(ComponentWithRoot, stdin_default);
-var navigation_menu_text_default = ComponentWithRoot;
-export { navigation_menu_text_default as default };
+Object.assign(ComponentWithRoot, CompletionAlert);
+var completion_alert_default = ComponentWithRoot;
+export { completion_alert_default as default };
