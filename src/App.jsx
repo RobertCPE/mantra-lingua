@@ -1,51 +1,118 @@
 // src/App.jsx
-// Styles are inside src/framer, so this path is correct:
 import './framer/styles.css'
 
-// === IMPORT components (names can be anything on the left) ===
-// Tip: the path uses the file name WITHOUT ".jsx"
-import ProductCardHome from './framer/product-card-home'
-import ButtonLoadMore from './framer/button-load-more'
-import ButtonCartoon from './framer/button-cartoon'
-import CountdownTimer from './framer/countdown-timer'
-import InlineLinkIconClick from './framer/inline-link-icon-click'
-import YouTubeEmbed from './framer/you-tube'
-import DeliveryOptionsComplete from './framer/delivery-options-complete'
-// Nested folder example:
-import ProductImage from './framer/product-page/product-image'
-// Big composite example (can be heavy):
-import ApplicationPortal from './framer/application-portal'
+// --- Always import nav explicitly so it's guaranteed to render:
+import NavigationBar from './framer/navigation-bar.jsx'
+import NavigationMenus from './framer/navigation-menus.jsx'
+import NavigationMenuText from './framer/navigation-menu-text.jsx'
+
+// Auto-import every .jsx inside src/framer and its subfolders (e.g. product-page/*)
+const modules = import.meta.glob('./framer/**/*.jsx', { eager: true })
+
+// Filenames we will EXCLUDE from auto-list because we render them explicitly
+const EXCLUDE = new Set([
+  'navigation-bar.jsx',
+  'navigation-menus.jsx',
+  'navigation-menu-text.jsx',
+])
+
+// Turn modules into an ordered list of { path, file, Comp }
+const exported = Object.entries(modules)
+  .map(([path, mod]) => {
+    const file = path.split('/').pop() // e.g., "product-card-home.jsx"
+    return { path, file, Comp: mod?.default }
+  })
+  // keep only modules with a default export that has a .Responsive variant
+  .filter(x => x.Comp && x.Comp.Responsive && !EXCLUDE.has(x.file))
+
+// Optional: put some commonly-viewed components earlier; everything else alphabetical
+const preferredOrder = [
+  'static-headerx1.jsx',
+  'sliding-headerx3.jsx',
+  'footer.jsx',
+  'product-card-home.jsx',
+  'product-card-information.jsx',
+  'product-card-blog.jsx',
+]
+
+const byPreferredOrder = (a, b) => {
+  const ai = preferredOrder.indexOf(a.file)
+  const bi = preferredOrder.indexOf(b.file)
+  const aI = ai === -1 ? Number.MAX_SAFE_INTEGER : ai
+  const bI = bi === -1 ? Number.MAX_SAFE_INTEGER : bi
+  return aI - bI || a.file.localeCompare(b.file)
+}
+
+const components = exported.sort(byPreferredOrder)
 
 export default function App() {
   return (
-    <div style={{ padding: 32, maxWidth: 1200 }}>
-      <h1 style={{ marginBottom: 24 }}>Mantra Lingua – Framer Export</h1>
-
-      {/* CARD + BUTTON (what you already had) */}
-      <section style={{ marginBottom: 48 }}>
-        <ProductCardHome.Responsive
-          link="/product-list/shop-books"
-          preserveParameters
-        />
-        <div style={{ marginTop: 16 }}>
-          <ButtonLoadMore.Responsive />
+    <div style={{ minHeight: '100vh', background: 'rgb(255,253,245)' }}>
+      {/* Sticky site header with explicit nav so it never disappears */}
+      <header
+        style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 50,
+          background: '#fff',
+          borderBottom: '1px solid rgba(0,0,0,0.06)',
+        }}
+      >
+        <NavigationBar.Responsive preserveParameters />
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '8px 16px' }}>
+          <NavigationMenus.Responsive preserveParameters />
+          <NavigationMenuText.Responsive preserveParameters />
         </div>
-      </section>
+      </header>
 
-      {/* MORE COMPONENTS RENDERED BELOW */}
-      <section style={{ display: 'grid', gap: 24, gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', marginBottom: 48 }}>
-        <div><ButtonCartoon.Responsive /></div>
-        <div><CountdownTimer.Responsive /></div>
-        <div><InlineLinkIconClick.Responsive /></div>
-        <div><YouTubeEmbed.Responsive /></div>
-        <div><DeliveryOptionsComplete.Responsive /></div>
-        <div><ProductImage.Responsive /></div>
-      </section>
+      {/* Quick debug list so you can see what auto-loaded */}
+      <div style={{ maxWidth: 1200, margin: '16px auto', padding: '0 16px' }}>
+        <details>
+          <summary style={{ cursor: 'pointer' }}>
+            Loaded components ({components.length})
+          </summary>
+          <ul style={{ columns: 2, marginTop: 8 }}>
+            {components.map(({ file }) => (
+              <li key={file} style={{ fontFamily: 'monospace' }}>{file}</li>
+            ))}
+          </ul>
+        </details>
+      </div>
 
-      {/* Optional: big composite – comment out if it feels slow */}
-      <section style={{ marginBottom: 48 }}>
-        <ApplicationPortal.Responsive />
-      </section>
+      {/* Render all other components */}
+      <main
+        style={{
+          maxWidth: 1200,
+          margin: '16px auto 48px',
+          padding: '0 16px',
+          display: 'grid',
+          gap: 24,
+        }}
+      >
+        {components.map(({ path, Comp, file }) => (
+          <section
+            key={path}
+            style={{
+              background: '#fff',
+              borderRadius: 12,
+              boxShadow: '0 2px 12px rgba(0,0,0,.06)',
+              padding: 16,
+            }}
+          >
+            <h3
+              style={{
+                margin: '0 0 12px',
+                fontSize: 16,
+                fontFamily: 'monospace',
+                opacity: 0.7,
+              }}
+            >
+              {file}
+            </h3>
+            <Comp.Responsive preserveParameters />
+          </section>
+        ))}
+      </main>
     </div>
   )
 }
