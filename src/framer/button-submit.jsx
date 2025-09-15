@@ -38,14 +38,943 @@
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-GM5ZJE4B.js";
-import "./chunks/chunk-YLTGU2H6.js";
-import "./chunks/chunk-QWKSH5UA.js";
+import { className, css, fonts } from "./chunks/chunk-YLTGU2H6.js";
+import { stdin_default } from "./chunks/chunk-QWKSH5UA.js";
 import { routes } from "./chunks/chunk-74LWP5VC.js";
 
 // virtual:button-submit
-import { Fragment } from "react";
+import { Fragment as Fragment2 } from "react";
 import { ContextProviders } from "unframer";
+
+// /:https://framerusercontent.com/modules/ztPIcN1stsTXzIXtQ00p/oN9UccZVMWj9w43o2yfF/ZcfoDXqmK.js
+import { jsx as _jsx2, jsxs as _jsxs } from "react/jsx-runtime";
+import {
+	addFonts,
+	addPropertyControls as addPropertyControls2,
+	ControlType as ControlType2,
+	cx as cx2,
+	getFonts,
+	getFontsFromSharedStyle,
+	Instance,
+	RichText,
+	useActiveVariantCallback,
+	useComponentViewport,
+	useLocaleInfo,
+	useOnVariantChange,
+	useVariantState,
+	withCSS as withCSS2,
+	withFX,
+	withOptimizedAppearEffect,
+} from "unframer";
+import { LayoutGroup, motion as motion2, MotionConfigContext } from "unframer";
+import * as React2 from "react";
+import { useRef } from "react";
+
+// /:https://framerusercontent.com/modules/Ju5ZOX7uxXJSW0QKtvNf/e8cf9cB2B1GSm9BhZWgb/fhMOLVg5H.js
+import { jsx as _jsx } from "react/jsx-runtime";
+import {
+	addPropertyControls,
+	ControlType,
+	cx,
+	motion,
+	useSVGTemplate,
+	withCSS,
+} from "unframer";
+import * as React from "react";
+import { forwardRef as forwardRef2 } from "react";
+var mask = "var(--framer-icon-mask)";
+var Base = /* @__PURE__ */ forwardRef2(function (props, ref) {
+	return (
+		<svg {...props} ref={ref}>
+			{props.children}
+		</svg>
+	);
+});
+var MotionSVG = motion.create(Base);
+var SVG = /* @__PURE__ */ forwardRef2((props, ref) => {
+	const { animated, layoutId, children, ...rest } = props;
+	return animated ? (
+		<MotionSVG {...rest} layoutId={layoutId} ref={ref}>
+			{children}
+		</MotionSVG>
+	) : (
+		<svg {...rest} ref={ref}>
+			{children}
+		</svg>
+	);
+});
+var svg =
+	'<svg display="block" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 0 9 C 0 4.029 4.029 0 9 0 C 13.971 0 18 4.029 18 9 C 18 13.971 13.971 18 9 18 C 4.029 18 0 13.971 0 9 Z" fill-opacity="var(--1m6trwb, 0)" fill="var(--21h8s6, rgb(0, 0, 0))" height="18px" id="bGfKZRE2u" transform="translate(3 3)" width="18px"/><path d="M 0 0 L 0 3" fill="transparent" height="3px" id="wkCLAv_OK" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--pgex8v, 1.5)" stroke="var(--21h8s6, rgb(0, 0, 0))" transform="translate(12 3)" width="1px"/><path d="M 2.122 0 L 0 2.122" fill="transparent" height="2.121562499999996px" id="MEJSIsra9" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--pgex8v, 1.5)" stroke="var(--21h8s6, rgb(0, 0, 0))" transform="translate(16.242 5.636)" width="2.1215625000000102px"/><path d="M 3 0 L 0 0" fill="transparent" height="1px" id="daTYTYz_4" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--pgex8v, 1.5)" stroke="var(--21h8s6, rgb(0, 0, 0))" transform="translate(18 12)" width="3px"/><path d="M 2.122 2.122 L 0 0" fill="transparent" height="2.1215625000000102px" id="wIW2ghrHb" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--pgex8v, 1.5)" stroke="var(--21h8s6, rgb(0, 0, 0))" transform="translate(16.242 16.242)" width="2.1215625000000102px"/><path d="M 0 3 L 0 0" fill="transparent" height="3px" id="uv0xIC2Eq" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--pgex8v, 1.5)" stroke="var(--21h8s6, rgb(0, 0, 0))" transform="translate(12 18)" width="1px"/><path d="M 0 2.122 L 2.122 0" fill="transparent" height="2.1215625000000102px" id="GGl3Clbaq" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--pgex8v, 1.5)" stroke="var(--21h8s6, rgb(0, 0, 0))" transform="translate(5.636 16.242)" width="2.121562499999996px"/><path d="M 0 0 L 3 0" fill="transparent" height="1px" id="twnHce2fv" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--pgex8v, 1.5)" stroke="var(--21h8s6, rgb(0, 0, 0))" transform="translate(3 12)" width="3px"/><path d="M 0 0 L 2.122 2.122" fill="transparent" height="2.121562499999996px" id="piJIKsgRo" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--pgex8v, 1.5)" stroke="var(--21h8s6, rgb(0, 0, 0))" transform="translate(5.636 5.636)" width="2.121562499999996px"/></svg>';
+var getProps = ({ alpha, color, height, id, width, width1, ...props }) => {
+	return {
+		...props,
+		ezTt3ayMo: color ?? props.ezTt3ayMo ?? "rgb(0, 0, 0)",
+		lschgej4H: width1 ?? props.lschgej4H ?? 1.5,
+		qxTvv_EBh: alpha ?? props.qxTvv_EBh,
+	};
+};
+var Component = /* @__PURE__ */ React.forwardRef(function (props, ref) {
+	const {
+		style,
+		className: className2,
+		layoutId,
+		variant,
+		ezTt3ayMo,
+		lschgej4H,
+		qxTvv_EBh,
+		...restProps
+	} = getProps(props);
+	const href = useSVGTemplate("345386091", svg);
+	return (
+		<SVG
+			{...restProps}
+			className={cx("framer-T7DIb", className2)}
+			layoutId={layoutId}
+			ref={ref}
+			role={"presentation"}
+			style={{
+				"--1m6trwb": qxTvv_EBh,
+				"--21h8s6": ezTt3ayMo,
+				"--pgex8v": lschgej4H,
+				...style,
+			}}
+			viewBox={"0 0 24 24"}
+		>
+			<use href={href} />
+		</SVG>
+	);
+});
+var css2 = [
+	`.framer-T7DIb { -webkit-mask: ${mask}; aspect-ratio: 1; display: block; mask: ${mask}; width: 24px; }`,
+];
+var Icon = withCSS(Component, css2, "framer-T7DIb");
+Icon.displayName = "Spinner";
+var stdin_default2 = Icon;
+addPropertyControls(Icon, {
+	ezTt3ayMo: {
+		defaultValue: "rgb(0, 0, 0)",
+		hidden: false,
+		title: "Color",
+		type: ControlType.Color,
+	},
+	lschgej4H: {
+		defaultValue: 1.5,
+		displayStepper: true,
+		hidden: false,
+		max: 6,
+		min: 0,
+		step: 0.5,
+		title: "Width",
+		type: ControlType.Number,
+	},
+	qxTvv_EBh: {
+		defaultValue: 0,
+		displayStepper: true,
+		hidden: false,
+		max: 1,
+		min: 0,
+		step: 0.1,
+		title: "Alpha",
+		type: ControlType.Number,
+	},
+});
+
+// /:https://framerusercontent.com/modules/ztPIcN1stsTXzIXtQ00p/oN9UccZVMWj9w43o2yfF/ZcfoDXqmK.js
+var SpinnerFonts = getFonts(stdin_default2);
+var SpinnerWithFX = withFX(stdin_default2);
+var MotionDivWithFXWithOptimizedAppearEffect = withOptimizedAppearEffect(
+	withFX(motion2.div),
+);
+var enabledGestures = {
+	Mm1uC_wbZ: {
+		hover: true,
+	},
+	oxFU6K266: {
+		hover: true,
+	},
+};
+var cycleOrder = [
+	"oxFU6K266",
+	"BQDKO1jC9",
+	"lpd0QGfHv",
+	"Mm1uC_wbZ",
+	"RXlvWX2xu",
+];
+var serializationHash = "framer-ZH6PO";
+var variantClassNames = {
+	BQDKO1jC9: "framer-v-hm2927",
+	lpd0QGfHv: "framer-v-1jkucs9",
+	Mm1uC_wbZ: "framer-v-1jh9lq0",
+	oxFU6K266: "framer-v-1ia95yb",
+	RXlvWX2xu: "framer-v-pneuv6",
+};
+function addPropertyOverrides(overrides, ...variants) {
+	const nextOverrides = {};
+	variants?.forEach(
+		(variant) => variant && Object.assign(nextOverrides, overrides[variant]),
+	);
+	return nextOverrides;
+}
+var transition1 = {
+	bounce: 0.2,
+	delay: 0,
+	duration: 0.4,
+	type: "spring",
+};
+var numberToPixelString = (value) => {
+	if (typeof value !== "number") return value;
+	if (!Number.isFinite(value)) return void 0;
+	return Math.max(0, value) + "px";
+};
+var transition2 = {
+	delay: 0,
+	duration: 0.3,
+	ease: [0.44, 0, 0.56, 1],
+	type: "tween",
+};
+var animation = {
+	opacity: 1,
+	rotate: 0,
+	rotateX: 0,
+	rotateY: 0,
+	scale: 1,
+	skewX: 0,
+	skewY: 0,
+	transition: transition2,
+	x: 0,
+	y: 0,
+};
+var animation1 = {
+	opacity: 1e-3,
+	rotate: 0,
+	rotateX: 0,
+	rotateY: 0,
+	scale: 1,
+	skewX: 0,
+	skewY: 0,
+	x: 0,
+	y: 0,
+};
+var transition3 = {
+	delay: 0,
+	duration: 1,
+	ease: [0, 0, 1, 1],
+	type: "tween",
+};
+var animation2 = {
+	opacity: 1,
+	rotate: 360,
+	rotateX: 0,
+	rotateY: 0,
+	scale: 1,
+	skewX: 0,
+	skewY: 0,
+	x: 0,
+	y: 0,
+};
+var Transition = ({ value, children }) => {
+	const config = React2.useContext(MotionConfigContext);
+	const transition = value ?? config.transition;
+	const contextValue = React2.useMemo(
+		() => ({
+			...config,
+			transition,
+		}),
+		[JSON.stringify(transition)],
+	);
+	return (
+		<MotionConfigContext.Provider value={contextValue}>
+			{children}
+		</MotionConfigContext.Provider>
+	);
+};
+var Variants = motion2.create(React2.Fragment);
+var humanReadableVariantMap = {
+	"Variant 1": "oxFU6K266",
+	Complete: "lpd0QGfHv",
+	FAB: "Mm1uC_wbZ",
+	Pressed: "RXlvWX2xu",
+	Spinning: "BQDKO1jC9",
+};
+var getProps2 = ({
+	background,
+	backgroundHover,
+	backgroundSelected,
+	backgroundShadowBox,
+	click,
+	fABPadding,
+	height,
+	iconColour,
+	iconSelect,
+	id,
+	textColour,
+	title,
+	titleComplete,
+	visibleLogoLarge,
+	visibleLogoMedium,
+	visibleLogoSmall,
+	visibleLogoXLArge,
+	width,
+	...props
+}) => {
+	return {
+		...props,
+		AfrF667i0: titleComplete ?? props.AfrF667i0 ?? "Sign up",
+		AhxkQCIUK:
+			backgroundHover ??
+			props.AhxkQCIUK ??
+			"var(--token-b16f50dd-11da-447e-b6e0-1de4e41e94cc, rgb(87, 128, 235))",
+		Bs7Kfyol3: title ?? props.Bs7Kfyol3 ?? "Sign up",
+		bvHLWpZgR: visibleLogoLarge ?? props.bvHLWpZgR,
+		GbG6B20dD:
+			background ??
+			props.GbG6B20dD ??
+			"var(--token-da79aab1-7975-42cb-a714-582054b64ae5, rgb(41, 94, 230))",
+		gHUOQVyAX: visibleLogoMedium ?? props.gHUOQVyAX,
+		KIs7LET4E:
+			textColour ??
+			props.KIs7LET4E ??
+			"var(--token-c0a3f8ff-3974-4f67-8022-41338a61d2c3, rgb(255, 255, 255))",
+		NILxoTyW_: visibleLogoXLArge ?? props.NILxoTyW_ ?? true,
+		PVX37ezAj:
+			backgroundShadowBox ??
+			props.PVX37ezAj ??
+			"var(--token-b8caeba6-5a35-4a04-8419-705e033e94ff, rgb(12, 39, 106))",
+		rmHujUjgg: click ?? props.rmHujUjgg,
+		Si2TgLaT3:
+			iconColour ??
+			props.Si2TgLaT3 ??
+			"var(--token-97eb4699-db62-4c1e-b48b-45bc7205d9de, rgb(255, 255, 255))",
+		variant:
+			humanReadableVariantMap[props.variant] ?? props.variant ?? "oxFU6K266",
+		wnNedC3i2:
+			backgroundSelected ??
+			props.wnNedC3i2 ??
+			"var(--token-da79aab1-7975-42cb-a714-582054b64ae5, rgb(41, 94, 230))",
+		XGMS85IRk: iconSelect ?? props.XGMS85IRk ?? stdin_default,
+		xni3gMFPB: visibleLogoSmall ?? props.xni3gMFPB,
+		zatm_emhi: fABPadding ?? props.zatm_emhi ?? "8px",
+	};
+};
+var createLayoutDependency = (props, variants) => {
+	if (props.layoutDependency)
+		return variants.join("-") + props.layoutDependency;
+	return variants.join("-");
+};
+var Component2 = /* @__PURE__ */ React2.forwardRef(function (props, ref) {
+	const fallbackRef = useRef(null);
+	const refBinding = ref ?? fallbackRef;
+	const defaultLayoutId = React2.useId();
+	const { activeLocale, setLocale } = useLocaleInfo();
+	const componentViewport = useComponentViewport();
+	const {
+		style,
+		className: className2,
+		layoutId,
+		variant,
+		Bs7Kfyol3,
+		AfrF667i0,
+		GbG6B20dD,
+		AhxkQCIUK,
+		wnNedC3i2,
+		PVX37ezAj,
+		KIs7LET4E,
+		rmHujUjgg,
+		XGMS85IRk,
+		Si2TgLaT3,
+		NILxoTyW_,
+		bvHLWpZgR,
+		gHUOQVyAX,
+		xni3gMFPB,
+		zatm_emhi,
+		...restProps
+	} = getProps2(props);
+	const {
+		baseVariant,
+		classNames,
+		clearLoadingGesture,
+		gestureHandlers,
+		gestureVariant,
+		isLoading,
+		setGestureState,
+		setVariant,
+		variants,
+	} = useVariantState({
+		cycleOrder,
+		defaultVariant: "oxFU6K266",
+		enabledGestures,
+		ref: refBinding,
+		variant,
+		variantClassNames,
+	});
+	const layoutDependency = createLayoutDependency(props, variants);
+	const { activeVariantCallback, delay } =
+		useActiveVariantCallback(baseVariant);
+	const onTap14kwpdp = activeVariantCallback(async (...args) => {
+		setGestureState({
+			isPressed: false,
+		});
+		setVariant("BQDKO1jC9");
+	});
+	const onAppearjqe7o7 = activeVariantCallback(async (...args) => {
+		await delay(() => setVariant("lpd0QGfHv", true), 1e3);
+	});
+	const onAppearix8ljj = activeVariantCallback(async (...args) => {
+		await delay(() => setVariant("oxFU6K266", true), 1e3);
+	});
+	const onTap1fhqsg1 = activeVariantCallback(async (...args) => {
+		setGestureState({
+			isPressed: false,
+		});
+		if (rmHujUjgg) {
+			const res = await rmHujUjgg(...args);
+			if (res === false) return false;
+		}
+		setVariant("RXlvWX2xu");
+	});
+	const onTapr77bmt = activeVariantCallback(async (...args) => {
+		setGestureState({
+			isPressed: false,
+		});
+		if (rmHujUjgg) {
+			const res = await rmHujUjgg(...args);
+			if (res === false) return false;
+		}
+		setVariant("Mm1uC_wbZ");
+	});
+	useOnVariantChange(baseVariant, {
+		BQDKO1jC9: onAppearjqe7o7,
+		lpd0QGfHv: onAppearix8ljj,
+	});
+	const sharedStyleClassNames = [className];
+	const scopingClassNames = cx2(serializationHash, ...sharedStyleClassNames);
+	const isDisplayed = () => {
+		if (baseVariant === "lpd0QGfHv") return false;
+		return true;
+	};
+	const isDisplayed1 = () => {
+		if (gestureVariant === "Mm1uC_wbZ-hover") return false;
+		if (["BQDKO1jC9", "Mm1uC_wbZ", "RXlvWX2xu"].includes(baseVariant))
+			return false;
+		return true;
+	};
+	const isDisplayed2 = () => {
+		if (baseVariant === "BQDKO1jC9") return true;
+		return false;
+	};
+	const isDisplayed3 = (value) => {
+		if (gestureVariant === "Mm1uC_wbZ-hover") return value;
+		if (["Mm1uC_wbZ", "RXlvWX2xu"].includes(baseVariant)) return value;
+		return false;
+	};
+	return (
+		<LayoutGroup id={layoutId ?? defaultLayoutId}>
+			<Variants animate={variants} initial={false}>
+				<Transition value={transition1}>
+					<motion2.button
+						{...restProps}
+						{...gestureHandlers}
+						className={cx2(
+							scopingClassNames,
+							"framer-1ia95yb",
+							className2,
+							classNames,
+						)}
+						data-framer-name={"Variant 1"}
+						data-highlight={true}
+						data-reset={"button"}
+						layoutDependency={layoutDependency}
+						layoutId={"oxFU6K266"}
+						onTap={onTap14kwpdp}
+						ref={refBinding}
+						style={{
+							...style,
+						}}
+						{...addPropertyOverrides(
+							{
+								"Mm1uC_wbZ-hover": {
+									"data-framer-name": void 0,
+								},
+								"oxFU6K266-hover": {
+									"data-framer-name": void 0,
+								},
+								BQDKO1jC9: {
+									"data-framer-name": "Spinning",
+									onTap: void 0,
+								},
+								lpd0QGfHv: {
+									"data-framer-name": "Complete",
+									onTap: void 0,
+								},
+								Mm1uC_wbZ: {
+									"data-framer-name": "FAB",
+									onTap: onTap1fhqsg1,
+								},
+								RXlvWX2xu: {
+									"data-framer-name": "Pressed",
+									onTap: onTapr77bmt,
+								},
+							},
+							baseVariant,
+							gestureVariant,
+						)}
+					>
+						{isDisplayed() && (
+							<motion2.div
+								className={"framer-xfswu7"}
+								data-framer-name={"shadowBox"}
+								layoutDependency={layoutDependency}
+								layoutId={"GEVD4HRUm"}
+								style={{
+									backgroundColor: PVX37ezAj,
+									borderBottomLeftRadius: 4,
+									borderBottomRightRadius: 4,
+									borderTopLeftRadius: 4,
+									borderTopRightRadius: 4,
+								}}
+								variants={{
+									Mm1uC_wbZ: {
+										borderBottomLeftRadius: 100,
+										borderBottomRightRadius: 100,
+										borderTopLeftRadius: 100,
+										borderTopRightRadius: 100,
+									},
+									RXlvWX2xu: {
+										borderBottomLeftRadius: 100,
+										borderBottomRightRadius: 100,
+										borderTopLeftRadius: 100,
+										borderTopRightRadius: 100,
+									},
+								}}
+							/>
+						)}
+						<motion2.div
+							className={"framer-1rx97gu"}
+							data-framer-name={"button-Container"}
+							layoutDependency={layoutDependency}
+							layoutId={"lZTEOrwfX"}
+							style={{
+								"--1999c9l": numberToPixelString(zatm_emhi),
+								backgroundColor: GbG6B20dD,
+								borderBottomLeftRadius: 4,
+								borderBottomRightRadius: 4,
+								borderTopLeftRadius: 4,
+								borderTopRightRadius: 4,
+							}}
+							variants={{
+								"oxFU6K266-hover": {
+									backgroundColor: AhxkQCIUK,
+								},
+								lpd0QGfHv: {
+									backgroundColor: wnNedC3i2,
+								},
+								Mm1uC_wbZ: {
+									borderBottomLeftRadius: 100,
+									borderBottomRightRadius: 100,
+									borderTopLeftRadius: 100,
+									borderTopRightRadius: 100,
+								},
+								RXlvWX2xu: {
+									backgroundColor: wnNedC3i2,
+									borderBottomLeftRadius: 100,
+									borderBottomRightRadius: 100,
+									borderTopLeftRadius: 100,
+									borderTopRightRadius: 100,
+								},
+							}}
+						>
+							{isDisplayed1() && (
+								<RichText
+									__fromCanvasComponent={true}
+									className={"framer-124vo52"}
+									data-framer-name={"Sign up"}
+									fonts={["Inter"]}
+									layoutDependency={layoutDependency}
+									layoutId={"ZFfPy0HTp"}
+									style={{
+										"--extracted-r6o4lv":
+											"var(--variable-reference-KIs7LET4E-ZcfoDXqmK)",
+										"--framer-paragraph-spacing": "0px",
+										"--variable-reference-KIs7LET4E-ZcfoDXqmK": KIs7LET4E,
+									}}
+									text={Bs7Kfyol3}
+									variants={{
+										lpd0QGfHv: {
+											"--extracted-r6o4lv":
+												"var(--token-97eb4699-db62-4c1e-b48b-45bc7205d9de, rgb(255, 255, 255))",
+										},
+									}}
+									verticalAlignment={"top"}
+									withExternalLayout={true}
+									{...addPropertyOverrides(
+										{
+											lpd0QGfHv: {
+												children: (
+													<React2.Fragment>
+														<motion2.p
+															className={"framer-styles-preset-1ig1unl"}
+															data-styles-preset={"HVMA0Nvm7"}
+															style={{
+																"--framer-text-color":
+																	"var(--extracted-r6o4lv, var(--token-97eb4699-db62-4c1e-b48b-45bc7205d9de, rgb(255, 255, 255)))",
+															}}
+														>
+															{"Sign up"}
+														</motion2.p>
+													</React2.Fragment>
+												),
+												text: AfrF667i0,
+											},
+										},
+										baseVariant,
+										gestureVariant,
+									)}
+								>
+									<React2.Fragment>
+										<motion2.p
+											className={"framer-styles-preset-1ig1unl"}
+											data-styles-preset={"HVMA0Nvm7"}
+											style={{
+												"--framer-text-color":
+													"var(--extracted-r6o4lv, var(--variable-reference-KIs7LET4E-ZcfoDXqmK))",
+											}}
+										>
+											{"Sign up"}
+										</motion2.p>
+									</React2.Fragment>
+								</RichText>
+							)}
+							{isDisplayed2() && (
+								<MotionDivWithFXWithOptimizedAppearEffect
+									__perspectiveFX={false}
+									__smartComponentFX={true}
+									__targetOpacity={1}
+									animate={animation}
+									className={"framer-15snfcu"}
+									data-framer-appear-id={"15snfcu"}
+									data-framer-name={"Spinner"}
+									initial={animation1}
+									layoutDependency={layoutDependency}
+									layoutId={"nX1V_z_6B"}
+									optimized={true}
+								>
+									<SpinnerWithFX
+										__framer__loop={animation2}
+										__framer__loopEffectEnabled={true}
+										__framer__loopRepeatDelay={0}
+										__framer__loopRepeatType={"loop"}
+										__framer__loopTransition={transition3}
+										__perspectiveFX={false}
+										__smartComponentFX={true}
+										__targetOpacity={1}
+										animated={true}
+										className={"framer-1aitf5x"}
+										data-framer-name={"Logo XLarge 48"}
+										layoutDependency={layoutDependency}
+										layoutId={"yxJq8BMZw"}
+										style={{
+											"--1m6trwb": 0.1,
+											"--21h8s6":
+												"var(--token-97eb4699-db62-4c1e-b48b-45bc7205d9de, rgb(255, 255, 255))",
+											"--pgex8v": 1.5,
+										}}
+									/>
+								</MotionDivWithFXWithOptimizedAppearEffect>
+							)}
+							{isDisplayed3(NILxoTyW_) && (
+								<Instance
+									animated={true}
+									className={"framer-vvv87z"}
+									Component={stdin_default2}
+									data-framer-name={"Logo XLarge 48"}
+									layoutDependency={layoutDependency}
+									layoutId={"Fo0qqHCkG"}
+									style={{
+										"--1m6trwb": 0.1,
+										"--21h8s6":
+											"var(--token-97eb4699-db62-4c1e-b48b-45bc7205d9de, rgb(255, 255, 255))",
+										"--pgex8v": 1.5,
+									}}
+									variants={{
+										Mm1uC_wbZ: {
+											"--21h8s6": Si2TgLaT3,
+										},
+										RXlvWX2xu: {
+											"--21h8s6": Si2TgLaT3,
+										},
+									}}
+									{...addPropertyOverrides(
+										{
+											Mm1uC_wbZ: {
+												Component: XGMS85IRk,
+											},
+											RXlvWX2xu: {
+												Component: XGMS85IRk,
+											},
+										},
+										baseVariant,
+										gestureVariant,
+									)}
+								/>
+							)}
+							{isDisplayed3(bvHLWpZgR) && (
+								<Instance
+									animated={true}
+									className={"framer-1muhv5x"}
+									Component={XGMS85IRk}
+									data-framer-name={"Logo Large 36"}
+									layoutDependency={layoutDependency}
+									layoutId={"nPKjeGL7k"}
+									style={{
+										"--1m6trwb": 0.1,
+										"--21h8s6": Si2TgLaT3,
+										"--pgex8v": 1.5,
+									}}
+								/>
+							)}
+							{isDisplayed3(gHUOQVyAX) && (
+								<Instance
+									animated={true}
+									className={"framer-10e1yo5"}
+									Component={XGMS85IRk}
+									data-framer-name={"Logo Medium 24"}
+									layoutDependency={layoutDependency}
+									layoutId={"cxpdWslNh"}
+									style={{
+										"--1m6trwb": 0.1,
+										"--21h8s6": Si2TgLaT3,
+										"--pgex8v": 1.5,
+									}}
+								/>
+							)}
+							{isDisplayed3(xni3gMFPB) && (
+								<Instance
+									animated={true}
+									className={"framer-1iypzs5"}
+									Component={XGMS85IRk}
+									data-framer-name={"Logo Small 16"}
+									layoutDependency={layoutDependency}
+									layoutId={"W7Gx8aBxu"}
+									style={{
+										"--1m6trwb": 0.1,
+										"--21h8s6": Si2TgLaT3,
+										"--pgex8v": 1.5,
+									}}
+								/>
+							)}
+						</motion2.div>
+					</motion2.button>
+				</Transition>
+			</Variants>
+		</LayoutGroup>
+	);
+});
+var css3 = [
+	"@supports (aspect-ratio: 1) { body { --framer-aspect-ratio-supported: auto; } }",
+	".framer-ZH6PO.framer-9fnygc, .framer-ZH6PO .framer-9fnygc { display: block; }",
+	".framer-ZH6PO.framer-1ia95yb { align-content: center; align-items: center; cursor: pointer; display: flex; flex-direction: row; flex-wrap: nowrap; gap: 10px; height: 60px; justify-content: center; overflow: visible; padding: 0px; position: relative; width: 260px; }",
+	".framer-ZH6PO .framer-xfswu7 { bottom: 0px; flex: none; gap: 10px; left: 0px; overflow: visible; position: absolute; right: 0px; top: 0px; }",
+	".framer-ZH6PO .framer-1rx97gu { align-content: center; align-items: center; display: flex; flex: 1 0 0px; flex-direction: row; flex-wrap: nowrap; gap: 10px; height: 100%; justify-content: center; overflow: visible; padding: 0px; position: relative; width: 1px; }",
+	".framer-ZH6PO .framer-124vo52 { -webkit-user-select: none; flex: none; height: auto; position: relative; user-select: none; white-space: pre; width: auto; }",
+	".framer-ZH6PO .framer-15snfcu { align-content: center; align-items: center; display: flex; flex: none; flex-direction: row; flex-wrap: nowrap; gap: 10px; height: min-content; justify-content: center; overflow: visible; padding: 0px; position: relative; width: min-content; }",
+	".framer-ZH6PO .framer-1aitf5x { flex: none; height: var(--framer-aspect-ratio-supported, 48px); position: relative; width: 48px; }",
+	".framer-ZH6PO .framer-vvv87z { flex: none; height: var(--framer-aspect-ratio-supported, 24px); position: relative; width: 48px; }",
+	".framer-ZH6PO .framer-1muhv5x { flex: none; height: var(--framer-aspect-ratio-supported, 48px); position: relative; width: 36px; }",
+	".framer-ZH6PO .framer-10e1yo5 { flex: none; height: var(--framer-aspect-ratio-supported, 48px); position: relative; width: 24px; }",
+	".framer-ZH6PO .framer-1iypzs5 { flex: none; height: var(--framer-aspect-ratio-supported, 24px); position: relative; width: 16px; }",
+	".framer-ZH6PO.framer-v-hm2927.framer-1ia95yb, .framer-ZH6PO.framer-v-1jkucs9.framer-1ia95yb { cursor: unset; }",
+	".framer-ZH6PO.framer-v-hm2927 .framer-1aitf5x { width: 36px; }",
+	".framer-ZH6PO.framer-v-1jh9lq0.framer-1ia95yb, .framer-ZH6PO.framer-v-pneuv6.framer-1ia95yb { height: min-content; padding: 2px; width: min-content; }",
+	".framer-ZH6PO.framer-v-1jh9lq0 .framer-1rx97gu { flex: none; height: min-content; padding: var(--1999c9l); width: min-content; }",
+	".framer-ZH6PO.framer-v-pneuv6 .framer-1rx97gu { flex: none; height: min-content; padding: 8px; width: min-content; }",
+	".framer-ZH6PO.framer-v-1ia95yb.hover .framer-xfswu7 { bottom: -7px; left: 7px; right: -7px; top: 7px; }",
+	".framer-ZH6PO.framer-v-1jh9lq0.hover .framer-xfswu7 { bottom: -5px; left: 4px; right: -4px; top: 4px; }",
+	...css,
+];
+var FramerZcfoDXqmK = withCSS2(Component2, css3, "framer-ZH6PO");
+var stdin_default3 = FramerZcfoDXqmK;
+FramerZcfoDXqmK.displayName = "button-Submit";
+FramerZcfoDXqmK.defaultProps = {
+	height: 60,
+	width: 260,
+};
+addPropertyControls2(FramerZcfoDXqmK, {
+	variant: {
+		options: ["oxFU6K266", "BQDKO1jC9", "lpd0QGfHv", "Mm1uC_wbZ", "RXlvWX2xu"],
+		optionTitles: ["Variant 1", "Spinning", "Complete", "FAB", "Pressed"],
+		title: "Variant",
+		type: ControlType2.Enum,
+	},
+	Bs7Kfyol3: {
+		defaultValue: "Sign up",
+		displayTextArea: false,
+		title: "Title",
+		type: ControlType2.String,
+	},
+	AfrF667i0: {
+		defaultValue: "Sign up",
+		description: "",
+		displayTextArea: false,
+		title: "Title - Complete",
+		type: ControlType2.String,
+	},
+	GbG6B20dD: {
+		defaultValue:
+			'var(--token-da79aab1-7975-42cb-a714-582054b64ae5, rgb(41, 94, 230)) /* {"name":"500"} */',
+		title: "Background",
+		type: ControlType2.Color,
+	},
+	AhxkQCIUK: {
+		defaultValue:
+			'var(--token-b16f50dd-11da-447e-b6e0-1de4e41e94cc, rgb(87, 128, 235)) /* {"name":"300"} */',
+		title: "Background Hover",
+		type: ControlType2.Color,
+	},
+	wnNedC3i2: {
+		defaultValue:
+			'var(--token-da79aab1-7975-42cb-a714-582054b64ae5, rgb(41, 94, 230)) /* {"name":"500"} */',
+		title: "Background Selected",
+		type: ControlType2.Color,
+	},
+	PVX37ezAj: {
+		defaultValue:
+			'var(--token-b8caeba6-5a35-4a04-8419-705e033e94ff, rgb(12, 39, 106)) /* {"name":"900"} */',
+		description: "",
+		title: "Background shadowBox",
+		type: ControlType2.Color,
+	},
+	KIs7LET4E: {
+		defaultValue:
+			"var(--token-c0a3f8ff-3974-4f67-8022-41338a61d2c3, rgb(255, 255, 255))",
+		description: "",
+		title: "Text Colour",
+		type: ControlType2.Color,
+	},
+	rmHujUjgg: {
+		title: "Click",
+		type: ControlType2.EventHandler,
+	},
+	XGMS85IRk: {
+		defaultValue: {
+			identifier:
+				"module:ayZa09p0VPJOdUh3L9I7/Krzj9E0EvQ4lVbz9P78Q/xH0_1QhWP.js:default",
+			moduleId: "ayZa09p0VPJOdUh3L9I7",
+		},
+		setModuleId: "omX0gWFPqDwhaiWwf6ab",
+		title: "Icon Select",
+		type: ControlType2.VectorSetItem,
+	},
+	Si2TgLaT3: {
+		defaultValue:
+			'var(--token-97eb4699-db62-4c1e-b48b-45bc7205d9de, rgb(255, 255, 255)) /* {"name":"25"} */',
+		description: "",
+		title: "Icon Colour",
+		type: ControlType2.Color,
+	},
+	NILxoTyW_: {
+		defaultValue: true,
+		title: "Visible - Logo XLarge",
+		type: ControlType2.Boolean,
+	},
+	bvHLWpZgR: {
+		defaultValue: false,
+		description: "",
+		title: "Visible - Logo Large",
+		type: ControlType2.Boolean,
+	},
+	gHUOQVyAX: {
+		defaultValue: false,
+		title: "Visible - Logo Medium",
+		type: ControlType2.Boolean,
+	},
+	xni3gMFPB: {
+		defaultValue: false,
+		title: "Visible - Logo Small",
+		type: ControlType2.Boolean,
+	},
+	zatm_emhi: {
+		defaultValue: "8px",
+		title: "FAB - Padding",
+		type: ControlType2.Padding,
+	},
+});
+addFonts(
+	FramerZcfoDXqmK,
+	[
+		{
+			explicitInter: true,
+			fonts: [
+				{
+					family: "Inter",
+					source: "framer",
+					style: "normal",
+					unicodeRange:
+						"U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F",
+					url: "https://framerusercontent.com/assets/5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2",
+					weight: "400",
+				},
+				{
+					family: "Inter",
+					source: "framer",
+					style: "normal",
+					unicodeRange: "U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116",
+					url: "https://framerusercontent.com/assets/EOr0mi4hNtlgWNn9if640EZzXCo.woff2",
+					weight: "400",
+				},
+				{
+					family: "Inter",
+					source: "framer",
+					style: "normal",
+					unicodeRange: "U+1F00-1FFF",
+					url: "https://framerusercontent.com/assets/Y9k9QrlZAqio88Klkmbd8VoMQc.woff2",
+					weight: "400",
+				},
+				{
+					family: "Inter",
+					source: "framer",
+					style: "normal",
+					unicodeRange: "U+0370-03FF",
+					url: "https://framerusercontent.com/assets/OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2",
+					weight: "400",
+				},
+				{
+					family: "Inter",
+					source: "framer",
+					style: "normal",
+					unicodeRange:
+						"U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF",
+					url: "https://framerusercontent.com/assets/JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2",
+					weight: "400",
+				},
+				{
+					family: "Inter",
+					source: "framer",
+					style: "normal",
+					unicodeRange:
+						"U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",
+					url: "https://framerusercontent.com/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2",
+					weight: "400",
+				},
+				{
+					family: "Inter",
+					source: "framer",
+					style: "normal",
+					unicodeRange:
+						"U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB",
+					url: "https://framerusercontent.com/assets/b6Y37FthZeALduNqHicBT6FutY.woff2",
+					weight: "400",
+				},
+			],
+		},
+		...SpinnerFonts,
+		...getFontsFromSharedStyle(fonts),
+	],
+	{
+		supportsExplicitInterCodegen: true,
+	},
+);
+
+// virtual:button-submit
 import { WithFramerBreakpoints } from "unframer";
 import { jsx } from "react/jsx-runtime";
 var locales = [
@@ -70,7 +999,7 @@ function ComponentWithRoot({ locale, ...rest }) {
 			locale={locale}
 			locales={locales}
 		>
-			{jsx(stdin_default, {
+			{jsx(stdin_default3, {
 				...rest,
 			})}
 		</ContextProviders>
@@ -104,13 +1033,13 @@ ComponentWithRoot.Responsive = ({ locale = "", ...rest }) => {
 			locales={locales}
 		>
 			<WithFramerBreakpoints
-				Component={stdin_default}
+				Component={stdin_default3}
 				variants={defaultResponsiveVariants}
 				{...rest}
 			/>
 		</ContextProviders>
 	);
 };
-Object.assign(ComponentWithRoot, stdin_default);
+Object.assign(ComponentWithRoot, stdin_default3);
 var button_submit_default = ComponentWithRoot;
 export { button_submit_default as default };

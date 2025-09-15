@@ -26,9 +26,7 @@
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-UC6EBGSA.js";
-import "./chunks/chunk-C6MNZJBI.js";
-import "./chunks/chunk-BBXSTD3N.js";
+import { stdin_default } from "./chunks/chunk-XV6SY3Z3.js";
 import { routes } from "./chunks/chunk-74LWP5VC.js";
 
 // virtual:navigation-menu-text
@@ -44,7 +42,9 @@ var locales = [
 		code: "yue-Hant-HK",
 	},
 ];
-var defaultResponsiveVariants = {};
+var defaultResponsiveVariants = {
+	base: "YBJBqrPUT",
+};
 /** @type {function(Props): any} */
 function ComponentWithRoot({ locale, ...rest }) {
 	return (

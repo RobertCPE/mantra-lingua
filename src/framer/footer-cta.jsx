@@ -27,22 +27,19 @@
 }} Props
 
  */
-import { stdin_default as stdin_default3 } from "./chunks/chunk-5H7ZWB2I.js";
-import "./chunks/chunk-4PNTGOWM.js";
-import "./chunks/chunk-LSDZCXQW.js";
-import "./chunks/chunk-GU6EMNIV.js";
-import "./chunks/chunk-NZN6TVQV.js";
+import { stdin_default as stdin_default3 } from "./chunks/chunk-7HPMNINN.js";
+import "./chunks/chunk-PXDCO22G.js";
 import "./chunks/chunk-VZARCJE6.js";
+import "./chunks/chunk-CW34Y26P.js";
 import { stdin_default as stdin_default2 } from "./chunks/chunk-D53GR4VG.js";
 import { stdin_default } from "./chunks/chunk-QWKSH5UA.js";
-import "./chunks/chunk-PXDCO22G.js";
 import { routes } from "./chunks/chunk-74LWP5VC.js";
 
 // virtual:footer-cta
 import { Fragment as Fragment2 } from "react";
 import { ContextProviders } from "unframer";
 
-// /:https://framerusercontent.com/modules/prkvo5DZnKoQnbUuFolL/2O4kHmoPZHCSR1Hkxcg5/y1Avdx6t1.js
+// /:https://framerusercontent.com/modules/prkvo5DZnKoQnbUuFolL/MdsHtGKLjhqDf8X9spJG/y1Avdx6t1.js
 import {
 	jsx as _jsx,
 	jsxs as _jsxs,
@@ -489,7 +486,7 @@ var css2 = [
 ];
 var className2 = "framer-Jvch2";
 
-// /:https://framerusercontent.com/modules/prkvo5DZnKoQnbUuFolL/2O4kHmoPZHCSR1Hkxcg5/y1Avdx6t1.js
+// /:https://framerusercontent.com/modules/prkvo5DZnKoQnbUuFolL/MdsHtGKLjhqDf8X9spJG/y1Avdx6t1.js
 var ButtonCartoonFonts = getFonts(stdin_default2);
 var MotionDivWithFXWithOptimizedAppearEffect = withOptimizedAppearEffect(
 	withFX(motion.div),
@@ -1266,12 +1263,7 @@ var locales = [
 		code: "yue-Hant-HK",
 	},
 ];
-var defaultResponsiveVariants = {
-	base: "ijCI2CRO_",
-	md: "aS8Q0mV1a",
-	xl: "S0c3uHoWI",
-	"2xl": "loRUXaFM5",
-};
+var defaultResponsiveVariants = {};
 /** @type {function(Props): any} */
 function ComponentWithRoot({ locale, ...rest }) {
 	return (

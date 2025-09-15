@@ -1,105 +1,97 @@
 // src/App.jsx
-import './framer/styles.css'
+import './framer/styles.css';
 
-// --- Brand & Nav ---
-import MlLogo from './framer/ml-logo.jsx'
-import NavigationBar from './framer/navigation-bar.jsx'
-import NavigationMenus from './framer/navigation-menus.jsx'
-import NavigationMenuText from './framer/navigation-menu-text.jsx'
+// === UI containers ===
+import OuterContainer from './framer/ui/outer-container';
+import InnerContainer from './framer/ui/inner-container';
 
-// --- Hero / promos ---
-import StaticHeaderx1 from './framer/static-headerx1.jsx'
-import SlidingHeaderx3 from './framer/sliding-headerx3.jsx'
+// === Brand & Nav ===
+import MlLogo from './framer/ml-logo';
+import NavigationBar from './framer/navigation-bar';
+import NavigationMenus from './framer/navigation-menus';
+import NavigationMenuText from './framer/navigation-menu-text';
 
-// --- Content ---
-import ProductCardHome from './framer/product-card-home.jsx'
+// === Hero / promos ===
+import StaticHeaderx1 from './framer/static-headerx1';
+import SlidingHeaderx3 from './framer/sliding-headerx3';
 
-// --- Footer ---
-import FooterCTA from './framer/footer-cta.jsx'
-import Footer from './framer/footer.jsx'
+// === Content ===
+import ProductCardHome from './framer/product-card-home';
 
-// --- Inline links (optional small elements) ---
-import InlineLinkClick from './framer/inline-link-click.jsx'
-import InlineLinkIconClick from './framer/inline-link-icon-click.jsx'
+// === Footer ===
+import FooterCTA from './framer/footer-cta';
+import Footer from './framer/footer';
 
-// --- Buttons ---
-import ButtonPlain from './framer/button-plain.jsx'
-import ButtonRounded from './framer/button-rounded.jsx'
-import ButtonLoadMore from './framer/button-load-more.jsx'
-import ButtonCartoon from './framer/button-cartoon.jsx'
-import ButtonSubmit from './framer/button-submit.jsx'
+// === Inline links ===
+import InlineLinkClick from './framer/inline-link-click';
+import InlineLinkIconClick from './framer/inline-link-icon-click';
+
+// === Buttons ===
+import ButtonPlain from './framer/button-plain';
+import ButtonRounded from './framer/button-rounded';
+import ButtonLoadMore from './framer/button-load-more';
+import ButtonCartoon from './framer/button-cartoon';
+import ButtonSubmit from './framer/button-submit';
 
 export default function App() {
   return (
-    <div style={{ background: 'rgb(255,253,245)' }}>
+    <div style={{ background: 'rgb(255,253,245)', padding: '24px' }}>
       {/* ====== NAV / HEADER ====== */}
-      <header
-        style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 30,
-          background: '#fff',
-          boxShadow: '0 1px 0 rgba(0,0,0,.06)',
-        }}
-      >
-        {/* Brand row */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 16,
-            padding: '8px 16px',
-            maxWidth: 1200,
-            margin: '0 auto',
-          }}
-        >
-          <MlLogo.Responsive />
-        </div>
+      <h2>Logo</h2>
+      <MlLogo.Responsive />
 
-        {/* Main navigation */}
-        <NavigationBar.Responsive preserveParameters />
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 16px 8px' }}>
-          <NavigationMenus.Responsive preserveParameters />
-          <NavigationMenuText.Responsive preserveParameters />
-        </div>
-      </header>
+      <h2>Navigation Bar</h2>
+      <NavigationBar.Responsive preserveParameters />
+
+      <h2>Navigation Menus</h2>
+      <NavigationMenus.Responsive preserveParameters />
+
+      <h2>Navigation Menu Text</h2>
+      <NavigationMenuText.Responsive preserveParameters />
 
       {/* ====== HERO / PROMOS ====== */}
-      <main style={{ maxWidth: 1200, margin: '24px auto', padding: '0 16px' }}>
-        <section style={{ marginBottom: 24 }}>
-          <StaticHeaderx1.Responsive preserveParameters />
-        </section>
+      <h2>Static Header x1</h2>
+      <StaticHeaderx1.Responsive preserveParameters />
 
-        <section style={{ marginBottom: 32 }}>
-          <SlidingHeaderx3.Responsive preserveParameters />
-        </section>
+      <h2>Sliding Header x3</h2>
+      <SlidingHeaderx3.Responsive preserveParameters />
 
-        {/* ====== FEATURED PRODUCT ====== */}
-        <section style={{ marginBottom: 48 }}>
-          <ProductCardHome.Responsive
-            link="/product-list/shop-books"
-            preserveParameters
-          />
-        </section>
+      {/* ====== FEATURED PRODUCT ====== */}
+      <h2>Product Card Home</h2>
+      <ProductCardHome.Responsive
+        link="/product-list/shop-books"
+        preserveParameters
+      />
 
-        {/* ====== OPTIONAL INLINE LINKS / BUTTONS SHOWCASE ====== */}
-        <section style={{ display: 'grid', gap: 12, gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', marginBottom: 48 }}>
-          <InlineLinkClick.Responsive preserveParameters />
-          <InlineLinkIconClick.Responsive preserveParameters />
+      {/* ====== INLINE LINKS ====== */}
+      <h2>Inline Link Click</h2>
+      <InlineLinkClick.Responsive preserveParameters />
 
-          <ButtonPlain.Responsive preserveParameters />
-          <ButtonRounded.Responsive preserveParameters />
-          <ButtonLoadMore.Responsive preserveParameters />
-          <ButtonCartoon.Responsive preserveParameters />
-          <ButtonSubmit.Responsive preserveParameters />
-        </section>
-      </main>
+      <h2>Inline Link Icon Click</h2>
+      <InlineLinkIconClick.Responsive preserveParameters />
+
+      {/* ====== BUTTONS ====== */}
+      <h2>Button Plain</h2>
+      <ButtonPlain.Responsive preserveParameters />
+
+      <h2>Button Rounded</h2>
+      <ButtonRounded.Responsive preserveParameters />
+
+      <h2>Button Load More</h2>
+      <ButtonLoadMore.Responsive preserveParameters />
+
+      <h2>Button Cartoon</h2>
+      <ButtonCartoon.Responsive preserveParameters />
+
+      <h2>Button Submit</h2>
+      <ButtonSubmit.Responsive preserveParameters />
 
       {/* ====== FOOTER ====== */}
-      <footer>
-        <FooterCTA.Responsive preserveParameters />
-        <Footer.Responsive preserveParameters />
-      </footer>
+      <h2>Footer CTA</h2>
+      <FooterCTA.Responsive preserveParameters />
+
+      <h2>Footer</h2>
+      <Footer.Responsive preserveParameters />
     </div>
-  )
+  );
 }

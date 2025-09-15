@@ -19,14 +19,13 @@
  * width?: any
  * height?: any
  * layoutId?: string
- * variant?: 'Large Logo' | 'Small Logo' // Variant
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-CW34Y26P.js";
-import { routes } from "./chunks/chunk-74LWP5VC.js";
+import { stdin_default } from "../chunks/chunk-CXZECANX.js";
+import { routes } from "../chunks/chunk-74LWP5VC.js";
 
-// virtual:ml-logo
+// virtual:ui/inner-container
 import { Fragment } from "react";
 import { ContextProviders } from "unframer";
 import { WithFramerBreakpoints } from "unframer";
@@ -69,7 +68,7 @@ function ComponentWithRoot({ locale, ...rest }) {
  */
 
 /**
- * Renders MlLogoFramerComponent for all breakpoints with a variants map. Variant prop is inferred per breakpoint.
+ * Renders InnerContainerFramerComponent for all breakpoints with a variants map. Variant prop is inferred per breakpoint.
  * @function
  * @param {Omit<Props, 'variant'> & {variants?: VariantsMap}} props
  * @returns {any}
@@ -93,5 +92,5 @@ ComponentWithRoot.Responsive = ({ locale = "", ...rest }) => {
 	);
 };
 Object.assign(ComponentWithRoot, stdin_default);
-var ml_logo_default = ComponentWithRoot;
-export { ml_logo_default as default };
+var inner_container_default = ComponentWithRoot;
+export { inner_container_default as default };
