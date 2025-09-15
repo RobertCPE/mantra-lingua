@@ -1,140 +1,228 @@
 // src/App.jsx
+import React from 'react'
 import './framer/styles.css'
 
-// 1) Eager-import every Framer component (.jsx) under src/framer and subfolders
-const modules = import.meta.glob('./framer/**/*.jsx', { eager: true })
-
-// 2) Keep only components that export default with a .Responsive variant
-const all = Object.entries(modules)
-  .map(([path, mod]) => ({ path, Comp: mod.default }))
-  .filter(x => x?.Comp && x.Comp?.Responsive)
-
-// 3) Friendly labels from filenames/paths
-const labelFromPath = (p) => {
-  // e.g. "./framer/check-out/payment-method-choose-payment.jsx"
-  const trimmed = p.replace(/^\.\/framer\//, '')
-  const name = trimmed.replace(/\.jsx$/, '')
-  return name
-    .split('/')
-    .map(seg =>
-      seg
-        .replace(/-/g, ' ')
-        .replace(/\b\w/g, c => c.toUpperCase())
-    )
-    .join(' / ')
-}
-
-// 4) Buckets to control rough ordering in the gallery
-const BUCKETS = [
-  // Layout & brand
-  { key: 'ui/',                          weight: 5 },
-  { key: '/ml-logo.jsx',                 weight: 8 },
-
-  // Navigation
-  { key: '/navigation-bar.jsx',          weight: 10 },
-  { key: '/navigation-menus.jsx',        weight: 11 },
-  { key: '/navigation-menu-text.jsx',    weight: 12 },
-
-  // Hero / headers
-  { key: '/static-headerx1.jsx',         weight: 20 },
-  { key: '/sliding-headerx3.jsx',        weight: 21 },
-
-  // Product & PDP
-  { key: 'product-page/',                weight: 30 },
-  { key: '/product.jsx',                 weight: 31 },
-  { key: '/product-card-',               weight: 32 },
-  { key: '/check-out-product-timer',     weight: 33 },
-
-  // Checkout / forms / account
-  { key: '/order-review.jsx',            weight: 40 },
-  { key: '/order-summary.jsx',           weight: 41 },
-  { key: '/verification-code-input.jsx', weight: 42 },
-  { key: '/company-registration-input.jsx', weight: 43 },
-  { key: '/delivery-details.jsx',        weight: 44 },
-  { key: '/delivery-information-',       weight: 45 },
-  { key: '/delivery-options-',           weight: 46 },
-  { key: '/payment-selections-dashboard.jsx', weight: 47 },
-  { key: '/payment-selections.jsx',      weight: 48 },
-  { key: '/payment-method.jsx',          weight: 49 },
-  { key: 'check-out/payment-method-choose-payment.jsx', weight: 50 },
-  { key: '/payment.jsx',                 weight: 51 },
-  { key: '/toggle.jsx',                  weight: 52 },
-  { key: '/checkbox.jsx',                weight: 53 },
-  { key: '/radio-button.jsx',            weight: 54 },
-  { key: '/sign-in.jsx',                 weight: 55 },
-  { key: '/settings.jsx',                weight: 56 },
-  { key: '/inbox.jsx',                   weight: 57 },
-
-  // Links & buttons
-  { key: '/inline-link',                 weight: 60 },
-  { key: '/button-',                     weight: 61 },
-
-  // Misc content
-  { key: '/language-dropdown.jsx',       weight: 70 },
-  { key: '/languages-pods-with-selector.jsx', weight: 71 },
-  { key: '/you-tube.jsx',                weight: 72 },
-  { key: '/tilt-card.jsx',               weight: 73 },
-  { key: '/accordion.jsx',               weight: 74 },
-  { key: '/create-me-fully.jsx',         weight: 75 },
-  { key: '/main-dashboard.jsx',          weight: 76 },
-  { key: '/application-portal',          weight: 77 }, // group of portal components
-  { key: '/completion-alert.jsx',        weight: 78 },
-
-  // Footers
-  { key: '/footer-cta.jsx',              weight: 90 },
-  { key: '/footer.jsx',                  weight: 91 },
-]
-
-// Assign a weight for sorting
-const weightFor = (path) => {
-  for (const b of BUCKETS) {
-    if (path.includes(b.key)) return b.weight
-  }
-  return 999 // unknowns at the end
-}
-
-const items = all
-  .map(x => ({ ...x, weight: weightFor(x.path), label: labelFromPath(x.path) }))
-  .sort((a, b) => a.weight - b.weight || a.path.localeCompare(b.path))
-
+// ---------- Small helpers ----------
 function Section({ title, children }) {
   return (
-    <section style={{ margin: '28px 0' }}>
-      <h2
+    <section style={{ margin: '24px 0' }}>
+      <div
         style={{
-          fontFamily: '"General Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif',
+          fontFamily: 'General Sans, system-ui, -apple-system, Segoe UI, Roboto, Arial',
           fontWeight: 800,
-          fontSize: '22px',
-          lineHeight: '28px',
-          letterSpacing: '-0.01em',
-          margin: '0 0 14px',
-          color: '#0f172a'
+          fontSize: 18,
+          letterSpacing: 0.2,
+          margin: '0 0 12px',
+          padding: '6px 10px',
+          border: '1px solid rgba(0,0,0,.06)',
+          background: 'rgba(0,0,0,.03)',
+          borderRadius: 8,
         }}
       >
         {title}
-      </h2>
-      <div
-        style={{
-          background: '#fff',
-          borderRadius: 12,
-          boxShadow: '0 1px 2px rgba(0,0,0,.05), 0 10px 30px rgba(2,6,23,.06)',
-          padding: 20
-        }}
-      >
-        {children}
       </div>
+      {children}
     </section>
   )
 }
 
+class ErrorBoundary extends React.Component {
+  constructor(props) { super(props); this.state = { hasError: false, error: null } }
+  static getDerivedStateFromError(error) { return { hasError: true, error } }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{
+          border: '1px solid #ffd7d7',
+          background: '#fff5f5',
+          color: '#a40000',
+          borderRadius: 8,
+          padding: 12,
+          fontFamily: 'system-ui'
+        }}>
+          <strong>Component crashed:</strong> {String(this.state.error?.message || this.state.error)}
+        </div>
+      )
+    }
+    return this.props.children
+  }
+}
+
+// ---------- Containers ----------
+import OuterContainer from './framer/ui/outer-container'
+
+// ---------- Brand & Navigation ----------
+import NavigationBar from './framer/navigation-bar'
+import NavigationMenus from './framer/navigation-menus'
+import NavigationMenuText from './framer/navigation-menu-text'
+
+// ---------- Headers / Promos ----------
+import StaticHeaderx1 from './framer/static-headerx1'
+import SlidingHeaderx3 from './framer/sliding-headerx3'
+
+// ---------- Product blocks ----------
+import Product from './framer/product'
+import ProductCardHome from './framer/product-card-home'
+import ProductCardIndex from './framer/product-card-index'
+import ProductCardInformation from './framer/product-card-information'
+import ProductCardBlog from './framer/product-card-blog'
+import ProductCardUpsell from './framer/product-card-upsell'
+import ProductCardUpsellSet from './framer/product-card-upsell-set'
+import ProductCardAccordionStatic from './framer/product-card-accordion-static'
+import ProductPageImage from './framer/product-page/product-image'
+
+// ---------- Checkout & Orders ----------
+import CheckoutTimerDeliveryEdit from './framer/check-out-product-timer-delivery-edit'
+import PaymentMethodChoose from './framer/check-out/payment-method-choose-payment'
+import OrderReview from './framer/order-review'
+import OrderSummary from './framer/order-summary'
+
+// ---------- Payments / Delivery / Forms ----------
+import PaymentSelections from './framer/payment-selections'
+import PaymentSelectionsDashboard from './framer/payment-selections-dashboard'
+import PaymentMethod from './framer/payment-method'
+import DeliveryOptionsEnter from './framer/delivery-options-enter'
+import CompanyRegistrationInput from './framer/company-registration-input'
+import EnterDetails from './framer/enter-details'
+import Checkbox from './framer/checkbox'
+import Toggle from './framer/toggle'
+import RadioButton from './framer/radio-button'
+
+// ---------- Application Portal ----------
+import ApplicationPortalWhoCanTrade from './framer/application-portal-who-can-trade'
+import ApplicationPortalAccountDepartment from './framer/application-portal-account-department'
+import CreateMeFully from './framer/create-me-fully'
+
+// ---------- Language / Selector ----------
+import LanguageDropdown from './framer/language-dropdown'
+import LanguagesPodsWithSelector from './framer/languages-pods-with-selector'
+
+// ---------- Footer ----------
+import FooterCTA from './framer/footer-cta'
+import Footer from './framer/footer'
+
+// ---------- Buttons ----------
+import ButtonSubmit from './framer/button-submit'
+
+// ---------- Page ----------
 export default function App() {
   return (
-    <div style={{ background: 'rgb(255,253,245)', padding: 24, maxWidth: 1200, margin: '0 auto' }}>
-      {items.map(({ path, label, Comp }) => (
-        <Section key={path} title={label}>
-          <Comp.Responsive preserveParameters />
+    <div style={{ background: 'rgb(255,253,245)', minHeight: '100vh' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: 16 }}>
+        <Section title="UI · Containers">
+          <ErrorBoundary><OuterContainer.Responsive preserveParameters /></ErrorBoundary>
         </Section>
-      ))}
+
+        <Section title="Brand · Navigation">
+          <ErrorBoundary><NavigationBar.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ marginTop: 12 }}>
+            <ErrorBoundary><NavigationMenus.Responsive preserveParameters /></ErrorBoundary>
+            <ErrorBoundary><NavigationMenuText.Responsive preserveParameters /></ErrorBoundary>
+          </div>
+        </Section>
+
+        <Section title="Headers / Promos · Static x1">
+          <ErrorBoundary><StaticHeaderx1.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Headers / Promos · Sliding x3">
+          <ErrorBoundary><SlidingHeaderx3.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Product · Base">
+          <ErrorBoundary><Product.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Product Cards · Home">
+          <ErrorBoundary><ProductCardHome.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Product Cards · Index">
+          <ErrorBoundary><ProductCardIndex.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Product Cards · Information">
+          <ErrorBoundary><ProductCardInformation.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Product Cards · Accordion (Static)">
+          <ErrorBoundary><ProductCardAccordionStatic.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Product Cards · Blog">
+          <ErrorBoundary><ProductCardBlog.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Product Cards · Upsell">
+          <ErrorBoundary><ProductCardUpsell.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Product Cards · Upsell Set">
+          <ErrorBoundary><ProductCardUpsellSet.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Product Page · Product Image">
+          <ErrorBoundary><ProductPageImage.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Checkout · Product Timer (Delivery Edit)">
+          <ErrorBoundary><CheckoutTimerDeliveryEdit.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Payments · Selections">
+          <ErrorBoundary><PaymentSelections.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><PaymentSelectionsDashboard.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><PaymentMethod.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><PaymentMethodChoose.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Delivery · Enter Options">
+          <ErrorBoundary><DeliveryOptionsEnter.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Forms · Company / Personal">
+          <ErrorBoundary><CompanyRegistrationInput.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><EnterDetails.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><Checkbox.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><Toggle.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><RadioButton.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><ButtonSubmit.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Application Portal">
+          <ErrorBoundary><ApplicationPortalWhoCanTrade.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><ApplicationPortalAccountDepartment.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><CreateMeFully.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Languages / Selector">
+          <ErrorBoundary><LanguageDropdown.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><LanguagesPodsWithSelector.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Orders">
+          <ErrorBoundary><OrderReview.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><OrderSummary.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+
+        <Section title="Footer">
+          <ErrorBoundary><FooterCTA.Responsive preserveParameters /></ErrorBoundary>
+          <div style={{ height: 12 }} />
+          <ErrorBoundary><Footer.Responsive preserveParameters /></ErrorBoundary>
+        </Section>
+      </div>
     </div>
   )
 }
