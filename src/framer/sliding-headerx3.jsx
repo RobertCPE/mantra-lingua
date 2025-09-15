@@ -26,16 +26,19 @@
 }} Props
 
  */
-import { stdin_default } from "./chunks/chunk-IXW6I6Z7.js";
-import "./chunks/chunk-D53GR4VG.js";
+import { stdin_default } from "./chunks/chunk-ITIDWM7Y.js";
+import "./chunks/chunk-KL3BYY5R.js";
+import "./chunks/chunk-F6S2LHAW.js";
+import "./chunks/chunk-KY4VFX4R.js";
 import "./chunks/chunk-QWKSH5UA.js";
+import "./chunks/chunk-YLTGU2H6.js";
 import { routes } from "./chunks/chunk-74LWP5VC.js";
 
 // virtual:sliding-headerx3
 import { Fragment as Fragment2 } from "react";
 import { ContextProviders } from "unframer";
 
-// /:https://framerusercontent.com/modules/6Hiv3ed5bTsKRsiNNmo7/YEAJWjvvZXfXdnfaBDPl/SJXSykrde.js
+// /:https://framerusercontent.com/modules/6Hiv3ed5bTsKRsiNNmo7/50aAgkX5ILoTUgATafdv/SJXSykrde.js
 import { jsx as _jsx2, jsxs as _jsxs2 } from "react/jsx-runtime";
 import {
 	addFonts,
@@ -58,7 +61,7 @@ import {
 import * as React from "react";
 import { useRef as useRef2 } from "react";
 
-// /:https://framerusercontent.com/modules/zvkTOpMSuRzRhLzZZIwG/vzgdvq3ezmf3RWurtT17/SlideShow.js
+// /:https://framerusercontent.com/modules/zvkTOpMSuRzRhLzZZIwG/rKZ0dTfxjIKWEZXMyGC6/SlideShow.js
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { resize } from "@motionone/dom";
 import { addPropertyControls, ControlType, RenderTarget } from "unframer";
@@ -103,7 +106,7 @@ function usePageVisibility() {
 	return isVisible;
 }
 
-// /:https://framerusercontent.com/modules/zvkTOpMSuRzRhLzZZIwG/vzgdvq3ezmf3RWurtT17/SlideShow.js
+// /:https://framerusercontent.com/modules/zvkTOpMSuRzRhLzZZIwG/rKZ0dTfxjIKWEZXMyGC6/SlideShow.js
 function awaitRefCallback(element, controller) {
 	let refCallbackResolve;
 	let current = element.current;
@@ -1392,9 +1395,27 @@ var Slide = /* @__PURE__ */ memo(
 			);
 		useEffect2(() => {
 			if (!isVisible) return;
-			return isVisible.on("change", (newValue) => {
+			function manageVisibility(visible) {
 				const node = ref?.current ?? fallbackRef.current;
-				node?.setAttribute("aria-hidden", !newValue);
+				if (!node) return;
+				if (visible) {
+					node.querySelectorAll("button,a").forEach((el) => {
+						const orig = el.dataset.origTabIndex;
+						if (orig) el.tabIndex = orig;
+						else el.removeAttribute("tabIndex");
+					});
+				} else {
+					node.querySelectorAll("button,a").forEach((el) => {
+						const orig = el.getAttribute("tabIndex");
+						if (orig) el.dataset.origTabIndex = orig;
+						el.tabIndex = -1;
+					});
+				}
+				node.setAttribute("aria-hidden", !visible);
+			}
+			manageVisibility(isVisible);
+			return isVisible.on("change", (visible) => {
+				manageVisibility(visible);
 			});
 		}, []);
 		const visibility = isCanvas
@@ -1415,7 +1436,6 @@ var Slide = /* @__PURE__ */ memo(
 					style={{
 						display: "contents",
 					}}
-					aria-hidden={index === 0 ? false : true}
 				>
 					{
 						/* @__PURE__ */ cloneElement(child, {
@@ -1512,11 +1532,11 @@ var dotStyle = {
 	padding: 0,
 };
 
-// /:https://framerusercontent.com/modules/6Hiv3ed5bTsKRsiNNmo7/YEAJWjvvZXfXdnfaBDPl/SJXSykrde.js
-var StaticHeaderX1Fonts = getFonts(stdin_default);
+// /:https://framerusercontent.com/modules/6Hiv3ed5bTsKRsiNNmo7/50aAgkX5ILoTUgATafdv/SJXSykrde.js
+var StaticHeaderx1Fonts = getFonts(stdin_default);
 var SlideshowFonts = getFonts(Slideshow);
 var cycleOrder = ["slkOmBvZb", "xBkkFpJY2"];
-var serializationHash = "framer-DqR7o";
+var serializationHash = "framer-GUnWN";
 var variantClassNames = {
 	slkOmBvZb: "framer-v-1i7r6ds",
 	xBkkFpJY2: "framer-v-14ub2jd",
@@ -2157,17 +2177,17 @@ var Component2 = /* @__PURE__ */ React.forwardRef(function (props, ref) {
 });
 var css = [
 	"@supports (aspect-ratio: 1) { body { --framer-aspect-ratio-supported: auto; } }",
-	".framer-DqR7o.framer-1msvano, .framer-DqR7o .framer-1msvano { display: block; }",
-	".framer-DqR7o.framer-1i7r6ds { align-content: flex-start; align-items: flex-start; display: flex; flex-direction: row; flex-wrap: wrap; gap: 0px; height: 636px; justify-content: flex-start; overflow: hidden; padding: 0px; position: relative; width: 1920px; }",
-	".framer-DqR7o .framer-1x8p3cd { align-content: center; align-items: center; display: flex; flex: 1 0 0px; flex-direction: column; flex-wrap: nowrap; gap: 0px; height: min-content; justify-content: flex-start; overflow: visible; padding: 0px; position: relative; width: 1px; }",
-	".framer-DqR7o .framer-17q2uoo-container { flex: none; height: 636px; position: relative; width: 100%; }",
-	".framer-DqR7o .framer-1tv1kpv-container, .framer-DqR7o .framer-d0ake8-container, .framer-DqR7o .framer-18thbm8-container { height: 680px; position: relative; width: 1920px; }",
-	".framer-DqR7o .framer-tk8tfe-container { flex: none; height: 1064px; position: relative; width: 100%; }",
-	".framer-DqR7o .framer-pksyyu-container, .framer-DqR7o .framer-vamdey-container, .framer-DqR7o .framer-yxymc4-container { height: auto; position: relative; width: 360px; }",
-	".framer-DqR7o.framer-v-14ub2jd.framer-1i7r6ds { align-content: center; align-items: center; flex-direction: column; height: min-content; width: 360px; }",
-	".framer-DqR7o.framer-v-14ub2jd .framer-1x8p3cd { flex: none; width: 100%; }",
+	".framer-GUnWN.framer-1msvano, .framer-GUnWN .framer-1msvano { display: block; }",
+	".framer-GUnWN.framer-1i7r6ds { align-content: flex-start; align-items: flex-start; display: flex; flex-direction: row; flex-wrap: wrap; gap: 0px; height: 636px; justify-content: flex-start; overflow: hidden; padding: 0px; position: relative; width: 1920px; }",
+	".framer-GUnWN .framer-1x8p3cd { align-content: center; align-items: center; display: flex; flex: 1 0 0px; flex-direction: column; flex-wrap: nowrap; gap: 0px; height: min-content; justify-content: flex-start; overflow: visible; padding: 0px; position: relative; width: 1px; }",
+	".framer-GUnWN .framer-17q2uoo-container { flex: none; height: 636px; position: relative; width: 100%; }",
+	".framer-GUnWN .framer-1tv1kpv-container, .framer-GUnWN .framer-d0ake8-container, .framer-GUnWN .framer-18thbm8-container { height: 680px; position: relative; width: 1920px; }",
+	".framer-GUnWN .framer-tk8tfe-container { flex: none; height: 1064px; position: relative; width: 100%; }",
+	".framer-GUnWN .framer-pksyyu-container, .framer-GUnWN .framer-vamdey-container, .framer-GUnWN .framer-yxymc4-container { height: auto; position: relative; width: 360px; }",
+	".framer-GUnWN.framer-v-14ub2jd.framer-1i7r6ds { align-content: center; align-items: center; flex-direction: column; height: min-content; width: 360px; }",
+	".framer-GUnWN.framer-v-14ub2jd .framer-1x8p3cd { flex: none; width: 100%; }",
 ];
-var FramerSJXSykrde = withCSS(Component2, css, "framer-DqR7o");
+var FramerSJXSykrde = withCSS(Component2, css, "framer-GUnWN");
 var stdin_default2 = FramerSJXSykrde;
 FramerSJXSykrde.displayName = "slidingHeaderx3";
 FramerSJXSykrde.defaultProps = {
@@ -2210,7 +2230,7 @@ addFonts(
 			explicitInter: true,
 			fonts: [],
 		},
-		...StaticHeaderX1Fonts,
+		...StaticHeaderx1Fonts,
 		...SlideshowFonts,
 	],
 	{

@@ -44,9 +44,7 @@ var locales = [
 		code: "yue-Hant-HK",
 	},
 ];
-var defaultResponsiveVariants = {
-	base: "WZmdcxJ14",
-};
+var defaultResponsiveVariants = {};
 /** @type {function(Props): any} */
 function ComponentWithRoot({ locale, ...rest }) {
 	return (

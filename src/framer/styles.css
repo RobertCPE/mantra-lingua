@@ -82,7 +82,7 @@
     --unframer-900: rgb(156, 52, 0);
     --unframer-white-10: rgba(255, 255, 255, 0.1);
     --unframer-100: rgb(255, 151, 99);
-    --unframer-50: rgb(214, 255, 133);
+    --unframer-50: rgb(235, 255, 194);
     --unframer-50: rgb(240, 229, 250);
     --unframer-25: rgb(250, 250, 250);
     --unframer-500: rgb(255, 85, 0);
@@ -184,7 +184,7 @@
     --token-ba209bd4-d306-4787-9559-155498f02477: rgb(156, 52, 0);
     --token-bb0293b3-d9eb-4029-8604-3460efd3cfa3: rgba(255, 255, 255, 0.1);
     --token-bcce10b6-9b74-4320-97ea-3f9782a1a876: rgb(255, 151, 99);
-    --token-bdeff214-17f1-4326-a7ea-4f49a557630e: rgb(214, 255, 133);
+    --token-bdeff214-17f1-4326-a7ea-4f49a557630e: rgb(235, 255, 194);
     --token-bfc521d2-6a55-47fd-b15b-36810914e2a4: rgb(240, 229, 250);
     --token-c0a3f8ff-3974-4f67-8022-41338a61d2c3: rgb(250, 250, 250);
     --token-c2c48687-6d40-4e91-b9ee-2309b18f31e2: rgb(255, 85, 0);
@@ -469,7 +469,115 @@
     font-weight: 700;
 }
 
-/* used by footer-cta.js, product-card-home.js, sliding-headerx3.js, static-headerx1.js */
+/* used by application-portal-who-can-trade.js, main-dashboard.js, settings.js */
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('https://fonts.gstatic.com/s/notosans/v41/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyAjBN9Y41P6zHtY.woff2');
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* used by main-dashboard.js, settings.js */
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('https://fonts.gstatic.com/s/notosans/v41/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyD9A99Y41P6zHtY.woff2');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('https://fonts.gstatic.com/s/notosans/v41/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyDPA99Y41P6zHtY.woff2');
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* used by delivery-details.js, main-dashboard.js, payment-method.js, payment.js, settings.js */
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyAaBN9Y41P6zHtY.woff2');
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* used by delivery-details.js, payment.js */
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('https://fonts.gstatic.com/s/notosans/v42/o-0mIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjcz6L1SoM-jCpoiyDPA99Y41P6zHtY.woff2');
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* used by application-portal.js */
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('https://fonts.gstatic.com/s/roboto/v49/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmWggvWl0Qn.woff2');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://framerusercontent.com/assets/5A3Ce6C9YYmCjpQx9M4inSaKU.woff2');
+    font-style: normal;
+    font-weight: 500;
+    unicodeRange: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://framerusercontent.com/assets/6mJuEAguuIuMog10gGvH5d3cl8.woff2');
+    font-style: normal;
+    font-weight: 500;
+    unicodeRange: U+1F00-1FFF;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://framerusercontent.com/assets/DolVirEGb34pEXEp8t8FQBSK4.woff2');
+    font-style: normal;
+    font-weight: 500;
+    unicodeRange: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://framerusercontent.com/assets/otTaNuNpVK4RbdlT7zDDdKvQBA.woff2');
+    font-style: normal;
+    font-weight: 500;
+    unicodeRange: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://framerusercontent.com/assets/Qx95Xyt0Ka3SGhinnbXIGpEIyP4.woff2');
+    font-style: normal;
+    font-weight: 500;
+    unicodeRange: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://framerusercontent.com/assets/UjlFhCnUjxhNfep4oYBPqnEssyo.woff2');
+    font-style: normal;
+    font-weight: 500;
+    unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://framerusercontent.com/assets/xYYWaj7wCU5zSQH0eXvSaS19wo.woff2');
+    font-style: normal;
+    font-weight: 500;
+    unicodeRange: U+0370-03FF;
+}
+
+/* used by application-portal.js, delivery-options-enter.js, footer-cta.js, inbox.js, main-dashboard.js, order-review.js, product-card-blog.js, product-card-home.js, sliding-headerx3.js, static-headerx1.js */
 
 @font-face {
     font-family: 'Inter';
@@ -583,7 +691,7 @@
     unicodeRange: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
-/* used by button-cartoon.js, button-load-more.js, button-rounded.js, button-submit.js, footer-cta.js, footer.js, inline-link-click.js, inline-link-icon-click.js, navigation-bar.js, navigation-menu-text.js, navigation-menus.js, product-card-home.js, sliding-headerx3.js, static-headerx1.js */
+/* used by accordion.js, add-address.js, application-portal-account-department.js, application-portal-choose-industry.js, application-portal-communication-selection.js, application-portal-type-of-organisation.js, application-portal-who-can-trade.js, application-portal.js, button-cartoon.js, button-load-more.js, button-rounded.js, button-submit.js, check-out-product-timer-delivery-edit.js, communication-preferences.js, delivery-details.js, delivery-information-delivery-option.js, delivery-information-shipping.js, delivery-options-complete.js, delivery-options-enter.js, enter-details.js, footer-cta.js, footer.js, inbox.js, inline-link-click.js, inline-link-icon-click.js, main-dashboard.js, navigation-bar.js, navigation-menu-text.js, navigation-menus.js, order-review.js, order-summary.js, payment-method-choose-payment.js, payment-method.js, payment-selections-dashboard.js, payment-selections.js, payment.js, product-card-accordion-static.js, product-card-blog.js, product-card-home.js, product-card-index.js, product-card-information.js, product-card-upsell-set.js, product-card-upsell.js, product.js, settings.js, sign-in.js, sliding-headerx3.js, static-headerx1.js */
 
 @font-face {
     font-family: 'Inter';
@@ -737,7 +845,7 @@
     unicodeRange: U+1F00-1FFF;
 }
 
-/* used by product-card-home.js */
+/* used by application-portal-account-department.js, application-portal.js, main-dashboard.js, order-summary.js, product-card-accordion-static.js, product-card-blog.js, product-card-home.js, product-card-index.js, product-card-information.js, product-card-upsell-set.js, product-card-upsell.js, settings.js */
 
 @font-face {
     font-family: 'Inter';
@@ -795,7 +903,7 @@
     unicodeRange: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
-/* used by button-cartoon.js, button-load-more.js, button-rounded.js, button-submit.js, footer-cta.js, footer.js, inline-link-click.js, inline-link-icon-click.js, navigation-bar.js, navigation-menu-text.js, navigation-menus.js, sliding-headerx3.js, static-headerx1.js */
+/* used by accordion.js, add-address.js, application-portal-account-department.js, application-portal-choose-industry.js, application-portal-communication-selection.js, application-portal-type-of-organisation.js, application-portal-who-can-trade.js, application-portal.js, button-cartoon.js, button-load-more.js, button-rounded.js, button-submit.js, check-out-product-timer-delivery-edit.js, communication-preferences.js, delivery-details.js, delivery-information-delivery-option.js, delivery-information-shipping.js, delivery-options-complete.js, delivery-options-enter.js, enter-details.js, footer-cta.js, footer.js, inbox.js, inline-link-click.js, inline-link-icon-click.js, main-dashboard.js, navigation-bar.js, navigation-menu-text.js, navigation-menus.js, order-review.js, order-summary.js, payment-method-choose-payment.js, payment-method.js, payment-selections-dashboard.js, payment-selections.js, payment.js, product-card-accordion-static.js, product-card-blog.js, product-card-index.js, product-card-information.js, product-card-upsell-set.js, product-card-upsell.js, product.js, settings.js, sign-in.js, sliding-headerx3.js, static-headerx1.js */
 
 @font-face {
     font-family: 'Inter';
@@ -853,7 +961,7 @@
     unicodeRange: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
 
-/* used by button-cartoon.js, button-rounded.js, button-submit.js, footer-cta.js, footer.js, navigation-bar.js, navigation-menu-text.js, navigation-menus.js, product-card-home.js, sliding-headerx3.js, static-headerx1.js */
+/* used by accordion.js, add-address.js, application-portal-account-department.js, application-portal-choose-industry.js, application-portal-communication-selection.js, application-portal-type-of-organisation.js, application-portal-who-can-trade.js, application-portal.js, button-cartoon.js, button-rounded.js, button-submit.js, check-out-product-timer-delivery-edit.js, communication-preferences.js, delivery-details.js, delivery-information-delivery-option.js, delivery-information-shipping.js, delivery-options-complete.js, delivery-options-enter.js, enter-details.js, footer-cta.js, footer.js, inbox.js, main-dashboard.js, navigation-bar.js, navigation-menu-text.js, navigation-menus.js, order-review.js, order-summary.js, payment-method-choose-payment.js, payment-method.js, payment-selections-dashboard.js, payment-selections.js, payment.js, product-card-accordion-static.js, product-card-blog.js, product-card-home.js, product-card-index.js, product-card-information.js, product-card-upsell-set.js, product-card-upsell.js, product.js, settings.js, sign-in.js, sliding-headerx3.js, static-headerx1.js */
 
 @font-face {
     font-family: 'Inter';
@@ -863,7 +971,7 @@
     unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* used by button-load-more.js, inline-link-click.js, inline-link-icon-click.js, navigation-bar.js, navigation-menus.js */
+/* used by button-load-more.js, inline-link-click.js, inline-link-icon-click.js, main-dashboard.js, navigation-bar.js, navigation-menus.js, settings.js */
 
 @font-face {
     font-family: 'Inter';
@@ -873,7 +981,7 @@
     unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* used by button-plain.js, button-rounded.js, footer-cta.js, navigation-bar.js, navigation-menu-text.js, navigation-menus.js, sliding-headerx3.js, static-headerx1.js */
+/* used by accordion.js, application-portal-account-department.js, application-portal-who-can-trade.js, application-portal.js, button-plain.js, button-rounded.js, check-out-product-timer-delivery-edit.js, delivery-details.js, delivery-information-shipping.js, delivery-options-enter.js, footer-cta.js, inbox.js, main-dashboard.js, navigation-bar.js, navigation-menu-text.js, navigation-menus.js, order-summary.js, payment-method-choose-payment.js, payment-method.js, payment.js, product-card-accordion-static.js, product-card-index.js, product-card-information.js, product-card-upsell-set.js, product-card-upsell.js, settings.js, sign-in.js, sliding-headerx3.js, static-headerx1.js */
 
 @font-face {
     font-family: 'General Sans';
@@ -882,7 +990,7 @@
     font-weight: 500;
 }
 
-/* used by button-cartoon.js, button-load-more.js, button-submit.js, footer-cta.js, footer.js, inline-link-click.js, inline-link-icon-click.js, navigation-bar.js, navigation-menus.js, sliding-headerx3.js, static-headerx1.js */
+/* used by accordion.js, add-address.js, application-portal-account-department.js, application-portal-choose-industry.js, application-portal-communication-selection.js, application-portal-type-of-organisation.js, application-portal.js, button-cartoon.js, button-load-more.js, button-submit.js, check-out-product-timer-delivery-edit.js, delivery-details.js, delivery-information-delivery-option.js, delivery-information-shipping.js, delivery-options-enter.js, enter-details.js, footer-cta.js, footer.js, inbox.js, inline-link-click.js, inline-link-icon-click.js, main-dashboard.js, navigation-bar.js, navigation-menus.js, order-review.js, order-summary.js, payment-method.js, payment-selections-dashboard.js, payment-selections.js, payment.js, product-card-accordion-static.js, product-card-index.js, product-card-information.js, product-card-upsell-set.js, product-card-upsell.js, product.js, settings.js, sign-in.js, sliding-headerx3.js, static-headerx1.js */
 
 @font-face {
     font-family: 'General Sans';
@@ -891,7 +999,7 @@
     font-weight: 600;
 }
 
-/* used by button-rounded.js, footer-cta.js, footer.js, navigation-bar.js, navigation-menu-text.js, navigation-menus.js, product-card-home.js, sliding-headerx3.js, static-headerx1.js */
+/* used by add-address.js, application-portal-account-department.js, application-portal-communication-selection.js, application-portal.js, button-rounded.js, check-out-product-timer-delivery-edit.js, communication-preferences.js, delivery-details.js, delivery-information-shipping.js, delivery-options-complete.js, delivery-options-enter.js, enter-details.js, footer-cta.js, footer.js, main-dashboard.js, navigation-bar.js, navigation-menu-text.js, navigation-menus.js, order-review.js, order-summary.js, payment-method-choose-payment.js, payment-method.js, payment-selections-dashboard.js, payment-selections.js, payment.js, product-card-blog.js, product-card-home.js, product-card-information.js, product-card-upsell-set.js, product-card-upsell.js, product.js, settings.js, sign-in.js, sliding-headerx3.js, static-headerx1.js */
 
 @font-face {
     font-family: 'General Sans';
@@ -900,7 +1008,7 @@
     font-weight: 700;
 }
 
-/* used by footer-cta.js, footer.js, inline-link-icon-click.js */
+/* used by add-address.js, application-portal-account-department.js, application-portal-choose-industry.js, application-portal-type-of-organisation.js, application-portal.js, check-out-product-timer-delivery-edit.js, communication-preferences.js, delivery-details.js, delivery-information-shipping.js, delivery-options-complete.js, delivery-options-enter.js, enter-details.js, footer-cta.js, footer.js, inbox.js, inline-link-icon-click.js, main-dashboard.js, order-summary.js, payment-method.js, payment-selections-dashboard.js, payment-selections.js, payment.js, product-card-blog.js, product-card-index.js, product-card-upsell-set.js, product-card-upsell.js, product.js, settings.js, sign-in.js */
 
 @font-face {
     font-family: 'General Sans';
