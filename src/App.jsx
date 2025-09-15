@@ -50,6 +50,7 @@ class ErrorBoundary extends React.Component {
 
 // ---------- Containers ----------
 import OuterContainer from './framer/ui/outer-container'
+import InnerContainer from './framer/ui/inner-container'
 
 // ---------- Brand & Navigation ----------
 import NavigationBar from './framer/navigation-bar'
@@ -109,8 +110,9 @@ export default function App() {
   return (
     <div style={{ background: 'rgb(255,253,245)', minHeight: '100vh' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: 16 }}>
-        <Section title="UI · Containers">
+      <Section title="UI · Containers">
           <ErrorBoundary><OuterContainer.Responsive preserveParameters /></ErrorBoundary>
+          <ErrorBoundary><InnerContainer.Responsive preserveParameters /></ErrorBoundary>
         </Section>
 
         <Section title="Brand · Navigation">
