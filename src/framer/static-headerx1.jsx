@@ -63,6 +63,7 @@ var locales = [
 var defaultResponsiveVariants = {
 	base: "m9aqTpWDo",
 	md: "B5iBC7DSm",
+	"2xl": "Ebax59or2",
 };
 /** @type {function(Props): any} */
 function ComponentWithRoot({ locale, ...rest }) {

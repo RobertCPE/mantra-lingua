@@ -59,7 +59,6 @@ import NavigationMenuText from './framer/navigation-menu-text'
 
 // ---------- Headers / Promos ----------
 import StaticHeaderx1 from './framer/static-headerx1'
-import SlidingHeaderx3 from './framer/sliding-headerx3'
 
 // ---------- Product blocks ----------
 import Product from './framer/product'
@@ -125,10 +124,6 @@ export default function App() {
 
         <Section title="Headers / Promos · Static x1">
           <ErrorBoundary><StaticHeaderx1.Responsive preserveParameters /></ErrorBoundary>
-        </Section>
-
-        <Section title="Headers / Promos · Sliding x3">
-          <ErrorBoundary><SlidingHeaderx3.Responsive preserveParameters /></ErrorBoundary>
         </Section>
 
         <Section title="Product · Base">
